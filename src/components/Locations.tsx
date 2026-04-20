@@ -4,11 +4,11 @@ import { useInView } from 'react-intersection-observer';
 import { MapPin } from 'lucide-react';
 
 const locations = [
-  { id: 1, name: 'Casa de Campo', desc: 'Villas y residencias ultra luxury', projects: 45, x: 52, y: 62 },
-  { id: 2, name: 'Punta Cana', desc: 'Resorts y complejos hoteleros', projects: 38, x: 78, y: 48 },
-  { id: 3, name: 'Bayahibe', desc: 'Boutique hotels y villas privadas', projects: 22, x: 60, y: 68 },
-  { id: 4, name: 'Dominicus', desc: 'Resorts frente al mar', projects: 18, x: 65, y: 72 },
-  { id: 5, name: 'La Romana', desc: 'Sede central y proyectos comerciales', projects: 32, x: 56, y: 65 },
+  { id: 1, name: 'Casa de Campo', desc: 'Villas y residencias ultra luxury', projects: 45, x: 68, y: 72 },
+  { id: 2, name: 'Punta Cana', desc: 'Resorts y complejos hoteleros', projects: 38, x: 82, y: 58 },
+  { id: 3, name: 'Bayahibe', desc: 'Boutique hotels y villas privadas', projects: 22, x: 72, y: 75 },
+  { id: 4, name: 'Dominicus', desc: 'Resorts frente al mar', projects: 18, x: 74, y: 78 },
+  { id: 5, name: 'La Romana', desc: 'Sede central y proyectos comerciales', projects: 32, x: 70, y: 74 },
 ];
 
 function LocationPin({ loc, index, isActive, onClick }: {
@@ -118,28 +118,32 @@ export default function Locations() {
             className="flex-1 relative"
           >
             <div className="relative glass rounded-sm p-4 overflow-hidden" style={{ minHeight: '480px' }}>
-              <svg viewBox="0 0 200 140" className="w-full">
+              <svg viewBox="0 0 800 400" className="w-full" preserveAspectRatio="xMidYMid meet">
                 <defs>
-                  <linearGradient id="mapGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor:'rgba(196,166,118,0.15)',stopOpacity:1}}/>
-                    <stop offset="100%" style={{stopColor:'rgba(139,115,85,0.08)',stopOpacity:1}}/>
+                  <linearGradient id="mapFill" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style={{stopColor:'rgba(255,255,255,0.12)',stopOpacity:1}}/>
+                    <stop offset="100%" style={{stopColor:'rgba(255,255,255,0.06)',stopOpacity:1}}/>
                   </linearGradient>
-                  <filter id="glow">
-                    <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                    <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                  <filter id="mapGlow">
+                    <feGaussianBlur stdDeviation="2" result="blur"/>
+                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
                   </filter>
                 </defs>
-                <path d="M60,20 L80,15 L100,18 L130,12 L160,20 L175,35 L180,55 L170,70 L165,85 L150,95 L130,100 L110,110 L90,115 L70,110 L55,100 L45,85 L40,65 L45,45 Z" fill="url(#mapGrad)" stroke="rgba(196,166,118,0.4)" strokeWidth="1.5" filter="url(#glow)"/>
-                <path d="M60,20 L80,15 L100,18 L100,50 L80,55 L60,50 Z" fill="rgba(196,166,118,0.12)" stroke="rgba(196,166,118,0.25)" strokeWidth="0.8"/>
-                <path d="M100,18 L130,12 L150,30 L130,50 L100,50 Z" fill="rgba(196,166,118,0.10)" stroke="rgba(196,166,118,0.25)" strokeWidth="0.8"/>
-                <path d="M60,50 L80,55 L90,75 L70,85 L55,75 L45,65 L45,45 Z" fill="rgba(196,166,118,0.08)" stroke="rgba(196,166,118,0.25)" strokeWidth="0.8"/>
-                <path d="M100,50 L130,50 L140,70 L120,85 L100,80 L90,75 L80,55 L100,50 Z" fill="rgba(196,166,118,0.14)" stroke="rgba(196,166,118,0.3)" strokeWidth="0.8"/>
-                <path d="M130,50 L150,30 L165,50 L170,70 L150,85 L140,70 Z" fill="rgba(196,166,118,0.11)" stroke="rgba(196,166,118,0.25)" strokeWidth="0.8"/>
-                <path d="M70,85 L90,75 L100,80 L120,85 L110,110 L90,115 L70,110 L55,100 Z" fill="rgba(196,166,118,0.09)" stroke="rgba(196,166,118,0.25)" strokeWidth="0.8"/>
-                <path d="M120,85 L140,70 L150,85 L130,100 L110,110 Z" fill="rgba(196,166,118,0.13)" stroke="rgba(196,166,118,0.25)" strokeWidth="0.8"/>
-                <g opacity="0.15" stroke="rgba(196,166,118,0.3)" strokeWidth="0.3">
-                  <line x1="0" y1="35" x2="200" y2="35"/><line x1="0" y1="70" x2="200" y2="70"/><line x1="0" y1="105" x2="200" y2="105"/>
-                  <line x1="50" y1="0" x2="50" y2="140"/><line x1="100" y1="0" x2="100" y2="140"/><line x1="150" y1="0" x2="150" y2="140"/>
+
+                <path d="M 150,180 L 180,165 L 220,160 L 280,155 L 340,160 L 400,165 L 460,175 L 520,185 L 570,200 L 610,215 L 640,230 L 650,245 L 645,265 L 630,280 L 600,290 L 560,295 L 510,298 L 450,295 L 390,288 L 330,280 L 270,270 L 210,258 L 170,245 L 150,225 L 145,205 L 148,190 Z"
+                      fill="url(#mapFill)"
+                      stroke="rgba(255,255,255,0.4)"
+                      strokeWidth="2"
+                      filter="url(#mapGlow)"
+                      opacity="0.9"/>
+
+                <g opacity="0.15" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5">
+                  <line x1="0" y1="100" x2="800" y2="100"/>
+                  <line x1="0" y1="200" x2="800" y2="200"/>
+                  <line x1="0" y1="300" x2="800" y2="300"/>
+                  <line x1="200" y1="0" x2="200" y2="400"/>
+                  <line x1="400" y1="0" x2="400" y2="400"/>
+                  <line x1="600" y1="0" x2="600" y2="400"/>
                 </g>
               </svg>
 

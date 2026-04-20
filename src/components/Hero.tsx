@@ -61,27 +61,8 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
         <div className="max-w-4xl">
-          <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.1 }} className="mb-8">
-            <svg width="120" height="120" viewBox="0 0 120 120" className="drop-shadow-[0_0_20px_rgba(196,166,118,0.5)]">
-              <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" style={{stopColor:'#C4A676',stopOpacity:1}}/>
-                  <stop offset="100%" style={{stopColor:'#8B7355',stopOpacity:1}}/>
-                </linearGradient>
-              </defs>
-              <circle cx="60" cy="60" r="56" fill="none" stroke="url(#goldGrad)" strokeWidth="1.5" opacity="0.4"/>
-              <circle cx="60" cy="60" r="50" fill="none" stroke="url(#goldGrad)" strokeWidth="1" opacity="0.6"/>
-              <g opacity="0.95">
-                <circle cx="60" cy="38" r="7" fill="#C4A676"/>
-                <circle cx="60" cy="38" r="13" fill="none" stroke="#C4A676" strokeWidth="2"/>
-                <circle cx="60" cy="38" r="19" fill="none" stroke="#C4A676" strokeWidth="1" opacity="0.5"/>
-                <path d="M42 56 L60 45 L78 56 L60 67 Z" fill="#8B7355" opacity="0.85"/>
-                <path d="M42 74 L60 63 L78 74 L60 85 Z" fill="#6B5745" opacity="0.9"/>
-                <circle cx="60" cy="60" r="8" fill="#2C2416" opacity="0.8"/>
-              </g>
-              <text x="60" y="105" fontFamily="serif" fontSize="11" fontWeight="700" fill="#F5F5F0" textAnchor="middle" letterSpacing="1.5">RDSS</text>
-              <text x="60" y="114" fontFamily="sans-serif" fontSize="6" fill="#C4A676" textAnchor="middle" letterSpacing="3">WOOD DESIGN</text>
-            </svg>
+          <motion.div initial={{opacity:0,scale:0.9}} animate={{opacity:1,scale:1}} transition={{duration:0.8,delay:0.1}} className="mb-10">
+            <img src="/santana-wood-logo.svg" alt="RDSS Wood Design" className="h-40 w-auto opacity-90 drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" style={{filter:'brightness(1.1) contrast(1.2)'}}/>
           </motion.div>
 
           <motion.div
@@ -99,7 +80,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="font-playfair font-black leading-[0.9] tracking-tight text-offwhite mb-6 text-shadow-white"
-            style={{ fontSize: 'clamp(48px, 8vw, 96px)' }}
+            style={{ fontSize: 'clamp(44px, 7vw, 80px)' }}
           >
             CONSTRUIMOS
             <br />
