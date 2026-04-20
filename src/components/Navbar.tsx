@@ -43,13 +43,23 @@ export default function Navbar() {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
-          <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center group">
-            <div className="relative">
-              <img
-                src="/Logo_de_Santana_Group_editable_under_2MB.jpg"
-                alt="RDSS Santana Group"
-                className="h-20 w-auto object-contain transition-all duration-500 opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]"
-              />
+          <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center gap-3 group">
+            <svg width="60" height="60" viewBox="0 0 100 100" className="transition-all duration-500 drop-shadow-[0_0_12px_rgba(196,166,118,0.4)] group-hover:drop-shadow-[0_0_24px_rgba(196,166,118,0.6)]">
+              <circle cx="50" cy="50" r="48" fill="none" stroke="rgba(196,166,118,0.3)" strokeWidth="1"/>
+              <circle cx="50" cy="50" r="42" fill="none" stroke="rgba(196,166,118,0.5)" strokeWidth="0.5"/>
+              <g opacity="0.95">
+                <circle cx="50" cy="30" r="6" fill="#C4A676"/>
+                <circle cx="50" cy="30" r="11" fill="none" stroke="#C4A676" strokeWidth="1.5"/>
+                <circle cx="50" cy="30" r="16" fill="none" stroke="#C4A676" strokeWidth="0.8" opacity="0.6"/>
+                <path d="M35 45 L50 35 L65 45 L50 55 Z" fill="#8B7355" opacity="0.8"/>
+                <path d="M35 60 L50 50 L65 60 L50 70 Z" fill="#6B5745" opacity="0.9"/>
+              </g>
+              <text x="50" y="88" fontFamily="serif" fontSize="9" fontWeight="700" fill="#F5F5F0" textAnchor="middle" letterSpacing="1">RDSS</text>
+              <text x="50" y="96" fontFamily="sans-serif" fontSize="5" fill="#C4A676" textAnchor="middle" letterSpacing="2">SANTANA GROUP</text>
+            </svg>
+            <div className="flex flex-col">
+              <span className="font-playfair text-offwhite text-lg font-bold tracking-tight leading-none">RDSS</span>
+              <span className="font-montserrat text-offwhite/50 text-[9px] tracking-[0.3em] uppercase leading-none">Santana Group</span>
             </div>
           </a>
 
