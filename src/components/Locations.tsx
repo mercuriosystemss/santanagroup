@@ -4,11 +4,11 @@ import { useInView } from 'react-intersection-observer';
 import { MapPin } from 'lucide-react';
 
 const locations = [
-  { id: 1, name: 'Casa de Campo', desc: 'Villas y residencias ultra luxury', projects: 45, x: 68, y: 72 },
-  { id: 2, name: 'Punta Cana', desc: 'Resorts y complejos hoteleros', projects: 38, x: 82, y: 58 },
-  { id: 3, name: 'Bayahibe', desc: 'Boutique hotels y villas privadas', projects: 22, x: 72, y: 75 },
-  { id: 4, name: 'Dominicus', desc: 'Resorts frente al mar', projects: 18, x: 74, y: 78 },
-  { id: 5, name: 'La Romana', desc: 'Sede central y proyectos comerciales', projects: 32, x: 70, y: 74 },
+  { id: 1, name: 'Casa de Campo', desc: 'Villas y residencias ultra luxury', projects: 45, x: 52, y: 62 },
+  { id: 2, name: 'Punta Cana', desc: 'Resorts y complejos hoteleros', projects: 38, x: 78, y: 48 },
+  { id: 3, name: 'Bayahibe', desc: 'Boutique hotels y villas privadas', projects: 22, x: 60, y: 68 },
+  { id: 4, name: 'Dominicus', desc: 'Resorts frente al mar', projects: 18, x: 65, y: 72 },
+  { id: 5, name: 'La Romana', desc: 'Sede central y proyectos comerciales', projects: 32, x: 56, y: 65 },
 ];
 
 function LocationPin({ loc, index, isActive, onClick }: {
@@ -30,17 +30,28 @@ function LocationPin({ loc, index, isActive, onClick }: {
       onClick={onClick}
     >
       <div className="relative group">
-        <div className={`relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 shadow-lg ${isActive?'bg-gradient-to-br from-amber-400 to-amber-600 scale-110':'bg-gradient-to-br from-slate-700 to-slate-800 border-2 border-amber-500/40 hover:border-amber-500/80 hover:scale-105'}`}>
-          <MapPin size={16} className={isActive?'text-obsidian':'text-amber-400/90'}/>
-          {!isActive&&(<><span className="absolute inset-0 rounded-full border-2 border-amber-500/60 animate-ping"/><span className="absolute inset-0 rounded-full bg-amber-500/20"/></>)}
+        <div className={`relative flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
+          isActive ? 'bg-offwhite' : 'bg-dark-surface border-2 border-offwhite/30 hover:border-offwhite/60'
+        }`}>
+          <MapPin size={14} className={isActive ? 'text-obsidian' : 'text-offwhite/60'} />
+          {!isActive && (
+            <span className="absolute inset-0 rounded-full border border-offwhite/20 animate-ping" />
+          )}
         </div>
-        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-0.5 w-0.5 h-3 bg-gradient-to-b from-amber-500/80 to-transparent"/>
-        <motion.div initial={{opacity:0,y:-8,scale:0.9}} animate={{opacity:isActive?1:0,y:isActive?-8:0,scale:isActive?1:0.9}} transition={{duration:0.25}} className="absolute bottom-full left-1/2 -translate-x-1/2 mb-6 w-52 bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-md border border-amber-500/30 rounded-sm p-4 pointer-events-none shadow-2xl" style={{zIndex:10}}>
+        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-1.5 h-1.5 rounded-full bg-offwhite/50" />
+
+        <motion.div
+          initial={{ opacity: 0, y: -8, scale: 0.9 }}
+          animate={{ opacity: isActive ? 1 : 0, y: isActive ? -8 : 0, scale: isActive ? 1 : 0.9 }}
+          transition={{ duration: 0.25 }}
+          className="absolute bottom-full left-1/2 -translate-x-1/2 mb-4 w-48 glass rounded-sm p-4 pointer-events-none"
+          style={{ zIndex: 10 }}
+        >
           <div className="font-playfair font-bold text-offwhite text-sm mb-1">{loc.name}</div>
-          <div className="font-montserrat text-offwhite/60 text-xs mb-3">{loc.desc}</div>
-          <div className="flex items-center gap-2 pt-2 border-t border-offwhite/10">
-            <span className="w-1.5 h-1.5 rounded-full bg-amber-500"/>
-            <span className="font-montserrat text-amber-400/90 text-xs font-semibold">{loc.projects} proyectos</span>
+          <div className="font-montserrat text-offwhite/50 text-xs mb-2">{loc.desc}</div>
+          <div className="flex items-center gap-1.5">
+            <span className="w-1 h-1 rounded-full bg-offwhite/50" />
+            <span className="font-montserrat text-offwhite/70 text-xs font-semibold">{loc.projects} proyectos</span>
           </div>
         </motion.div>
       </div>
@@ -118,33 +129,19 @@ export default function Locations() {
             className="flex-1 relative"
           >
             <div className="relative glass rounded-sm p-4 overflow-hidden" style={{ minHeight: '480px' }}>
-              <svg viewBox="0 0 800 400" className="w-full" preserveAspectRatio="xMidYMid meet">
-                <defs>
-                  <linearGradient id="mapFill" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{stopColor:'rgba(255,255,255,0.12)',stopOpacity:1}}/>
-                    <stop offset="100%" style={{stopColor:'rgba(255,255,255,0.06)',stopOpacity:1}}/>
-                  </linearGradient>
-                  <filter id="mapGlow">
-                    <feGaussianBlur stdDeviation="2" result="blur"/>
-                    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                  </filter>
-                </defs>
-
-                <path d="M 150,180 L 180,165 L 220,160 L 280,155 L 340,160 L 400,165 L 460,175 L 520,185 L 570,200 L 610,215 L 640,230 L 650,245 L 645,265 L 630,280 L 600,290 L 560,295 L 510,298 L 450,295 L 390,288 L 330,280 L 270,270 L 210,258 L 170,245 L 150,225 L 145,205 L 148,190 Z"
-                      fill="url(#mapFill)"
-                      stroke="rgba(255,255,255,0.4)"
-                      strokeWidth="2"
-                      filter="url(#mapGlow)"
-                      opacity="0.9"/>
-
-                <g opacity="0.15" stroke="rgba(255,255,255,0.3)" strokeWidth="0.5">
-                  <line x1="0" y1="100" x2="800" y2="100"/>
-                  <line x1="0" y1="200" x2="800" y2="200"/>
-                  <line x1="0" y1="300" x2="800" y2="300"/>
-                  <line x1="200" y1="0" x2="200" y2="400"/>
-                  <line x1="400" y1="0" x2="400" y2="400"/>
-                  <line x1="600" y1="0" x2="600" y2="400"/>
-                </g>
+              <svg
+                viewBox="0 0 200 140"
+                className="w-full opacity-15"
+                style={{ fill: 'rgba(255,255,255,0.08)', stroke: 'rgba(255,255,255,0.2)', strokeWidth: '0.5' }}
+              >
+                <path d="M60,20 L80,15 L100,18 L130,12 L160,20 L175,35 L180,55 L170,70 L165,85 L150,95 L130,100 L110,110 L90,115 L70,110 L55,100 L45,85 L40,65 L45,45 Z" />
+                <path d="M60,20 L80,15 L100,18 L100,50 L80,55 L60,50 Z" opacity="0.5" />
+                <path d="M100,18 L130,12 L150,30 L130,50 L100,50 Z" opacity="0.5" />
+                <path d="M60,50 L80,55 L90,75 L70,85 L55,75 L45,65 L45,45 Z" opacity="0.5" />
+                <path d="M100,50 L130,50 L140,70 L120,85 L100,80 L90,75 L80,55 L100,50 Z" opacity="0.5" />
+                <path d="M130,50 L150,30 L165,50 L170,70 L150,85 L140,70 Z" opacity="0.5" />
+                <path d="M70,85 L90,75 L100,80 L120,85 L110,110 L90,115 L70,110 L55,100 Z" opacity="0.5" />
+                <path d="M120,85 L140,70 L150,85 L130,100 L110,110 Z" opacity="0.5" />
               </svg>
 
               <div className="absolute inset-0 p-4">

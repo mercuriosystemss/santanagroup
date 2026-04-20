@@ -61,10 +61,6 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 w-full">
         <div className="max-w-4xl">
-          <motion.div initial={{opacity:0,scale:0.9}} animate={{opacity:1,scale:1}} transition={{duration:0.8,delay:0.1}} className="mb-10">
-            <img src="/santana-wood-logo.svg" alt="RDSS Wood Design" className="h-40 w-auto opacity-90 drop-shadow-[0_4px_20px_rgba(0,0,0,0.5)]" style={{filter:'brightness(1.1) contrast(1.2)'}}/>
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -80,7 +76,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="font-playfair font-black leading-[0.9] tracking-tight text-offwhite mb-6 text-shadow-white"
-            style={{ fontSize: 'clamp(44px, 7vw, 80px)' }}
+            style={{ fontSize: 'clamp(52px, 10vw, 140px)' }}
           >
             CONSTRUIMOS
             <br />
