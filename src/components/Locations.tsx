@@ -30,10 +30,8 @@ function LocationPin({ loc, index, isActive, onClick }: {
       onClick={onClick}
     >
       <div className="relative group">
-        <div className={`relative flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
-          isActive ? 'bg-offwhite' : 'bg-dark-surface border-2 border-offwhite/30 hover:border-offwhite/60'
-        }`}>
-          <MapPin size={14} className={isActive ? 'text-obsidian' : 'text-offwhite/60'} />
+        <div className={`relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 shadow-xl ${isActive ? 'bg-white scale-125' : 'bg-slate-700 border-2 border-white/60 hover:border-white hover:scale-110'}`}>
+          <MapPin size={18} className={isActive ? 'text-slate-900' : 'text-white'} />
           {!isActive && (
             <span className="absolute inset-0 rounded-full border border-offwhite/20 animate-ping" />
           )}
@@ -129,20 +127,22 @@ export default function Locations() {
             className="flex-1 relative"
           >
             <div className="relative glass rounded-sm p-4 overflow-hidden" style={{ minHeight: '480px' }}>
-              <svg
-                viewBox="0 0 200 140"
-                className="w-full opacity-15"
-                style={{ fill: 'rgba(255,255,255,0.08)', stroke: 'rgba(255,255,255,0.2)', strokeWidth: '0.5' }}
-              >
-                <path d="M60,20 L80,15 L100,18 L130,12 L160,20 L175,35 L180,55 L170,70 L165,85 L150,95 L130,100 L110,110 L90,115 L70,110 L55,100 L45,85 L40,65 L45,45 Z" />
-                <path d="M60,20 L80,15 L100,18 L100,50 L80,55 L60,50 Z" opacity="0.5" />
-                <path d="M100,18 L130,12 L150,30 L130,50 L100,50 Z" opacity="0.5" />
-                <path d="M60,50 L80,55 L90,75 L70,85 L55,75 L45,65 L45,45 Z" opacity="0.5" />
-                <path d="M100,50 L130,50 L140,70 L120,85 L100,80 L90,75 L80,55 L100,50 Z" opacity="0.5" />
-                <path d="M130,50 L150,30 L165,50 L170,70 L150,85 L140,70 Z" opacity="0.5" />
-                <path d="M70,85 L90,75 L100,80 L120,85 L110,110 L90,115 L70,110 L55,100 Z" opacity="0.5" />
-                <path d="M120,85 L140,70 L150,85 L130,100 L110,110 Z" opacity="0.5" />
-              </svg>
+<svg viewBox="0 0 200 140" className="w-full">
+  <defs>
+    <linearGradient id="islandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="rgba(255,255,255,0.25)"/>
+      <stop offset="100%" stopColor="rgba(255,255,255,0.12)"/>
+    </linearGradient>
+  </defs>
+  <path d="M60,20 L80,15 L100,18 L130,12 L160,20 L175,35 L180,55 L170,70 L165,85 L150,95 L130,100 L110,110 L90,115 L70,110 L55,100 L45,85 L40,65 L45,45 Z" fill="url(#islandGrad)" stroke="rgba(255,255,255,0.5)" strokeWidth="2"/>
+  <path d="M60,20 L80,15 L100,18 L100,50 L80,55 L60,50 Z" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+  <path d="M100,18 L130,12 L150,30 L130,50 L100,50 Z" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" strokeWidth="1"/>
+  <path d="M100,50 L130,50 L140,70 L120,85 L100,80 L90,75 L80,55 L100,50 Z" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.35)" strokeWidth="1"/>
+  <g opacity="0.25" stroke="rgba(255,255,255,0.4)" strokeWidth="0.5">
+    <line x1="0" y1="35" x2="200" y2="35"/><line x1="0" y1="70" x2="200" y2="70"/><line x1="0" y1="105" x2="200" y2="105"/>
+    <line x1="50" y1="0" x2="50" y2="140"/><line x1="100" y1="0" x2="100" y2="140"/><line x1="150" y1="0" x2="150" y2="140"/>
+  </g>
+</svg>
 
               <div className="absolute inset-0 p-4">
                 {locations.map((loc, i) => (

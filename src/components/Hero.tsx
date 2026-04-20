@@ -76,7 +76,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
             className="font-playfair font-black leading-[0.9] tracking-tight text-offwhite mb-6 text-shadow-white"
-            style={{ fontSize: 'clamp(52px, 10vw, 140px)' }}
+            style={{ fontSize: 'clamp(42px, 6.5vw, 72px)' }}
           >
             CONSTRUIMOS
             <br />
