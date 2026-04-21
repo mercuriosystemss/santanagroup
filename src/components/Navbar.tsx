@@ -39,17 +39,13 @@ export default function Navbar() {
         animate={{ y: visible ? 0 : -100 }}
         transition={{ duration: 0.4, ease: 'easeInOut' }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled ? 'glass-dark py-2' : 'py-4 bg-transparent'
+          scrolled ? 'bg-white shadow-md py-2' : 'py-4 bg-white'
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
           <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center group">
             <motion.div className="relative" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-              <img
-                src="/Logo_de_Santana_Group_editable_under_2MB.jpg"
-                alt="RDSS Santana Group"
-                className="h-20 w-auto object-contain transition-all duration-500 opacity-85 group-hover:opacity-100 group-hover:drop-shadow-[0_0_16px_rgba(255,255,255,0.25)]"
-              />
+              <span className="font-playfair text-xl font-bold text-obsidian tracking-wider">SANTANA GROUP</span>
             </motion.div>
           </a>
 
@@ -58,10 +54,10 @@ export default function Navbar() {
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="font-montserrat text-xs font-medium tracking-[0.2em] uppercase text-offwhite/60 hover:text-offwhite transition-colors duration-300 relative group cursor-none"
+                className="font-montserrat text-xs font-medium tracking-[0.2em] uppercase text-obsidian/60 hover:text-obsidian transition-colors duration-300 relative group cursor-none"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-px bg-offwhite/60 transition-all duration-300 group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-px bg-obsidian/60 transition-all duration-300 group-hover:w-full" />
               </button>
             ))}
           </div>
@@ -74,7 +70,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="lg:hidden text-offwhite hover:text-white-soft transition-colors cursor-none"
+            className="lg:hidden text-obsidian hover:text-obsidian/70 transition-colors cursor-none"
           >
             {menuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -88,9 +84,9 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.4, ease: 'easeInOut' }}
-            className="fixed inset-0 z-40 glass-dark flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-white flex flex-col items-center justify-center gap-8"
           >
-            <button onClick={() => setMenuOpen(false)} className="absolute top-6 right-6 text-offwhite hover:text-white cursor-none">
+            <button onClick={() => setMenuOpen(false)} className="absolute top-6 right-6 text-obsidian hover:text-obsidian/70 cursor-none">
               <X size={28} />
             </button>
             {navLinks.map((link, i) => (
@@ -100,7 +96,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.08 }}
                 onClick={() => handleNavClick(link.href)}
-                className="font-playfair text-3xl text-offwhite/70 hover:text-offwhite transition-colors cursor-none"
+                className="font-playfair text-3xl text-obsidian/70 hover:text-obsidian transition-colors cursor-none"
               >
                 {link.label}
               </motion.button>
@@ -108,7 +104,7 @@ export default function Navbar() {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.4 }}>
               <button
                 onClick={() => handleNavClick('#contacto')}
-                className="mt-4 px-8 py-3 border border-offwhite/30 text-offwhite font-montserrat text-sm tracking-widest uppercase hover:bg-offwhite hover:text-obsidian transition-all duration-300 cursor-none"
+                className="mt-4 px-8 py-3 border border-obsidian/30 text-obsidian font-montserrat text-sm tracking-widest uppercase hover:bg-obsidian hover:text-white transition-all duration-300 cursor-none"
               >
                 Consulta Gratis
               </button>
@@ -142,7 +138,7 @@ export function MagneticButton({ children, onClick, className = '' }: { children
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className={`relative px-6 py-2.5 border border-offwhite/30 text-offwhite font-montserrat text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-offwhite hover:text-obsidian hover:border-offwhite cursor-none ${className}`}
+      className={`relative px-6 py-2.5 border border-obsidian/30 text-obsidian font-montserrat text-xs font-semibold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-obsidian hover:text-white hover:border-obsidian cursor-none ${className}`}
     >
       {children}
     </button>
