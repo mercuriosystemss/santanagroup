@@ -16,9 +16,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-dark-card border-t border-white/5">
+    <footer className="relative bg-obsidian border-t border-white/5">
       <div
-        className="absolute inset-0 opacity-20 pointer-events-none"
+        className="absolute inset-0 opacity-15 pointer-events-none"
         style={{ backgroundImage: 'radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.02) 0%, transparent 60%)' }}
       />
 
@@ -38,7 +38,7 @@ export default function Footer() {
               />
             </div>
             <p className="font-montserrat text-sm text-offwhite/35 leading-relaxed mb-8 max-w-xs">
-              Empresa premium de construcción, arquitectura y diseño en República Dominicana. Transformamos visiones en experiencias de vida extraordinarias.
+              Empresa especializada en construcción, arquitectura y diseño en República Dominicana. Transformamos visiones en realidades con excelencia.
             </p>
 
             <div className="space-y-3">
@@ -83,7 +83,7 @@ export default function Footer() {
               Servicios
             </h4>
             <ul className="space-y-3">
-              {['Arquitectura & Diseño', 'Construcción Luxury', 'Project Management', 'RDSS Wood Design', 'Consultoría'].map((s) => (
+              {['Arquitectura & Diseño', 'Construcción & Obra', 'Project Management', 'RDSS Wood Design', 'Consultoría'].map((s) => (
                 <li key={s}>
                   <span className="font-montserrat text-sm text-offwhite/35 flex items-center gap-2">
                     <span className="w-1 h-1 rounded-full bg-offwhite/25 flex-shrink-0" />

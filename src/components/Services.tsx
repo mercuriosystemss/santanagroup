@@ -25,7 +25,7 @@ const services = [
     title: 'RDSS Wood Design',
     description: 'Muebles a medida y carpintería personalizada. Cada pieza es una obra de arte funcional creada para espacios únicos.',
     image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=600',
-    features: ['Muebles a medida', 'Cocinas de lujo', 'Closets premium', 'Puertas y ventanas'],
+    features: ['Muebles a medida', 'Cocinas personalizadas', 'Closets a medida', 'Puertas y ventanas'],
     number: '03',
     logo: '/santana-wood-logo.png',
   },

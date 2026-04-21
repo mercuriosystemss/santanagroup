@@ -78,10 +78,10 @@ export default function Hero() {
             className="font-playfair font-black leading-[0.9] tracking-tight text-offwhite mb-6 text-shadow-white"
             style={{ fontSize: 'clamp(42px, 6.5vw, 72px)' }}
           >
-            CONSTRUIMOS
+            PROYECTOS A LA
             <br />
             <span className="mono-gradient" style={{ display: 'block' }}>
-              EL LUJO
+              MEDIDA
             </span>
           </motion.h1>
 

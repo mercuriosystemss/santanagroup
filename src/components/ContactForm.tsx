@@ -48,8 +48,8 @@ export default function ContactForm() {
               <div className="h-px w-8 bg-offwhite/30" />
             </div>
             <h2 className="font-playfair text-4xl md:text-6xl font-bold text-offwhite mb-5">
-              ¿Listo para tu<br />
-              <span className="mono-gradient">proyecto luxury?</span>
+              Inicia tu<br />
+              <span className="mono-gradient">proyecto hoy</span>
             </h2>
             <p className="font-montserrat text-offwhite/40 text-sm max-w-lg mx-auto leading-relaxed">
               Contáctanos hoy y transformemos tu visión en realidad. Consulta inicial completamente gratuita.
