@@ -44,13 +44,13 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
           <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center group">
-            <div className="relative">
+            <motion.div className="relative" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
               <img
                 src="/Logo_de_Santana_Group_editable_under_2MB.jpg"
                 alt="RDSS Santana Group"
-                className="h-20 w-auto object-contain transition-all duration-500 opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_20px_rgba(255,255,255,0.3)]"
+                className="h-20 w-auto object-contain transition-all duration-500 opacity-85 group-hover:opacity-100 group-hover:drop-shadow-[0_0_16px_rgba(255,255,255,0.25)]"
               />
-            </div>
+            </motion.div>
           </a>
 
           <div className="hidden lg:flex items-center gap-10">

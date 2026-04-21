@@ -27,7 +27,7 @@ const services = [
     image: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=600&auto=format&fit=crop&q=80',
     features: ['Muebles a medida', 'Cocinas de lujo', 'Closets premium', 'Puertas y ventanas'],
     number: '03',
-    logo: '/LOGO_RDSS_WOOD_EDITABLE_under_2MB.jpg',
+    logo: '/santana-wood-logo.png',
   },
 ];
 
@@ -95,11 +95,12 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
               <span className="font-montserrat text-xs text-offwhite/40 tracking-[0.3em] uppercase">{service.number}</span>
             </div>
             {'logo' in service && service.logo && (
-              <img
+              <motion.img
                 src={service.logo as string}
                 alt="RDSS Wood Design"
-                className="h-8 w-auto object-contain opacity-80"
-                style={{ filter: 'invert(1) brightness(0.85)', mixBlendMode: 'screen' }}
+                className="h-16 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:drop-shadow-[0_0_16px_rgba(139,90,43,0.6)]"
+                whileHover={{ scale: 1.08 }}
+                transition={{ duration: 0.3 }}
               />
             )}
           </div>
