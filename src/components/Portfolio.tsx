@@ -18,7 +18,7 @@ const projects = [
     title: 'Villa Moderna Caribe',
     location: 'Casa de Campo',
     category: 'villas' as Category,
-    image: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2024',
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     title: 'Resort Luxury Ocean',
     location: 'Punta Cana',
     category: 'resorts' as Category,
-    image: 'https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2024',
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     title: 'Suite Master Elegante',
     location: 'Bayahibe',
     category: 'resorts' as Category,
-    image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.pexels.com/photos/1522693/pexels-photo-1522693.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2023',
   },
   {
@@ -42,7 +42,7 @@ const projects = [
     title: 'Residencia Privada',
     location: 'Dominicus',
     category: 'villas' as Category,
-    image: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2023',
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     title: 'Penthouse Panorámico',
     location: 'La Romana',
     category: 'comercial' as Category,
-    image: 'https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2023',
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     title: 'Villa Paraíso',
     location: 'Casa de Campo',
     category: 'villas' as Category,
-    image: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.pexels.com/photos/1522693/pexels-photo-1522693.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2022',
   },
 ];

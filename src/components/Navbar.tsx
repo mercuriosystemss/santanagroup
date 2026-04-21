@@ -45,7 +45,11 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 lg:px-10 flex items-center justify-between">
           <a href="#inicio" onClick={() => handleNavClick('#inicio')} className="flex items-center group">
             <motion.div className="relative" whileHover={{ scale: 1.05 }} transition={{ duration: 0.3 }}>
-              <span className="font-playfair text-xl font-bold text-obsidian tracking-wider">SANTANA GROUP</span>
+              <img
+                src="/santana-logo.png"
+                alt="RDSS Santana Group"
+                className="h-16 w-auto object-contain transition-all duration-500 opacity-90 group-hover:opacity-100 group-hover:drop-shadow-[0_0_8px_rgba(10,10,10,0.15)]"
+              />
             </motion.div>
           </a>
 

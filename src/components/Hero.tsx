@@ -9,7 +9,7 @@ const floatingItems = [
   { Icon: Ruler, bottom: '28%', left: '15%', delay: '4s', size: 18 },
 ];
 
-const HERO_IMAGE = 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&auto=format&fit=crop&q=80';
+const HERO_IMAGE = 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=1920';
 
 export default function Hero() {
   const bgRef = useRef<HTMLDivElement>(null);

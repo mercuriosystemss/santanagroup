@@ -32,10 +32,9 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <img
-                src="/Logo_de_Santana_Group_editable_under_2MB.jpg"
+                src="/santana-logo.png"
                 alt="RDSS Santana Group"
                 className="h-12 w-auto object-contain"
-                style={{ filter: 'invert(1) brightness(0.85)', mixBlendMode: 'screen' }}
               />
             </div>
             <p className="font-montserrat text-sm text-offwhite/35 leading-relaxed mb-8 max-w-xs">
