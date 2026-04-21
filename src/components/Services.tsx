@@ -34,6 +34,7 @@ const services = [
 function ServiceCard({ service, index }: { service: typeof services[0]; index: number }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+  const hasLogo = 'logo' in service && service.logo;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const card = cardRef.current;
@@ -46,7 +47,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
     const rotateX = ((y - centerY) / centerY) * -8;
     const rotateY = ((x - centerX) / centerX) * 8;
     card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.05, 1.05, 1.05)`;
-    card.style.boxShadow = `0 24px 70px rgba(0,0,0,0.75)`;
+    card.style.boxShadow = hasLogo ? '0 24px 70px rgba(0,0,0,0.15)' : '0 24px 70px rgba(0,0,0,0.75)';
     card.style.setProperty('--mouse-x', `${(x / rect.width) * 100}%`);
     card.style.setProperty('--mouse-y', `${(y / rect.height) * 100}%`);
   };
@@ -69,7 +70,11 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="service-card group relative bg-dark-surface white-border rounded-sm overflow-hidden cursor-none transition-all duration-500"
+        className={`service-card group relative rounded-sm overflow-hidden cursor-none transition-all duration-500 ${
+          hasLogo
+            ? 'bg-white border border-obsidian/10'
+            : 'bg-dark-surface white-border'
+        }`}
         style={{ transformStyle: 'preserve-3d' }}
       >
         <div className="relative h-64 overflow-hidden">
@@ -79,11 +84,21 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-dark-surface via-dark-surface/40 to-transparent" />
-          <div className="absolute top-4 right-4 w-10 h-10 bg-offwhite flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-            <ArrowUpRight size={18} className="text-obsidian" />
+          <div className={`absolute inset-0 bg-gradient-to-t ${
+            hasLogo
+              ? 'from-white via-white/30 to-transparent'
+              : 'from-dark-surface via-dark-surface/40 to-transparent'
+          }`} />
+          <div className={`absolute top-4 right-4 w-10 h-10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 ${
+            hasLogo
+              ? 'bg-obsidian'
+              : 'bg-offwhite'
+          }`}>
+            <ArrowUpRight size={18} className={hasLogo ? 'text-offwhite' : 'text-obsidian'} />
           </div>
-          <div className="absolute top-4 left-4 font-playfair text-5xl font-bold text-offwhite/8">
+          <div className={`absolute top-4 left-4 font-playfair text-5xl font-bold ${
+            hasLogo ? 'text-obsidian/8' : 'text-offwhite/8'
+          }`}>
             {service.number}
           </div>
         </div>
@@ -91,29 +106,47 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
         <div className="p-8">
           <div className="flex items-center justify-between mb-3">
             <div className="flex items-center gap-3">
-              <div className="h-px w-6 bg-offwhite/30" />
-              <span className="font-montserrat text-xs text-offwhite/40 tracking-[0.3em] uppercase">{service.number}</span>
+              <div className={`h-px w-6 ${hasLogo ? 'bg-obsidian/20' : 'bg-offwhite/30'}`} />
+              <span className={`font-montserrat text-xs tracking-[0.3em] uppercase ${
+                hasLogo ? 'text-obsidian/50' : 'text-offwhite/40'
+              }`}>{service.number}</span>
             </div>
-            {'logo' in service && service.logo && (
+            {hasLogo && (
               <motion.img
                 src={service.logo as string}
                 alt="RDSS Wood Design"
-                className="h-16 w-auto object-contain opacity-90 group-hover:opacity-100 transition-opacity duration-300 group-hover:drop-shadow-[0_0_16px_rgba(139,90,43,0.6)]"
+                className="h-16 w-auto object-contain opacity-85 group-hover:opacity-100 transition-opacity duration-300 group-hover:drop-shadow-[0_0_12px_rgba(30,30,30,0.3)]"
                 whileHover={{ scale: 1.08 }}
                 transition={{ duration: 0.3 }}
               />
             )}
           </div>
-          <h3 className="font-playfair text-2xl font-bold text-offwhite mb-4 group-hover:text-white-soft transition-colors duration-300">
+          <h3 className={`font-playfair text-2xl font-bold mb-4 transition-colors duration-300 ${
+            hasLogo
+              ? 'text-obsidian group-hover:text-obsidian/80'
+              : 'text-offwhite group-hover:text-white-soft'
+          }`}>
             {service.title}
           </h3>
-          <p className="font-montserrat text-offwhite/50 text-sm leading-relaxed mb-6">
+          <p className={`font-montserrat text-sm leading-relaxed mb-6 ${
+            hasLogo
+              ? 'text-obsidian/60'
+              : 'text-offwhite/50'
+          }`}>
             {service.description}
           </p>
           <ul className="grid grid-cols-2 gap-2">
             {service.features.map((f) => (
-              <li key={f} className="flex items-center gap-2 font-montserrat text-xs text-offwhite/35">
-                <span className="w-1 h-1 rounded-full bg-offwhite/40 flex-shrink-0" />
+              <li key={f} className={`flex items-center gap-2 font-montserrat text-xs ${
+                hasLogo
+                  ? 'text-obsidian/40'
+                  : 'text-offwhite/35'
+              }`}>
+                <span className={`w-1 h-1 rounded-full flex-shrink-0 ${
+                  hasLogo
+                    ? 'bg-obsidian/30'
+                    : 'bg-offwhite/40'
+                }`} />
                 {f}
               </li>
             ))}
