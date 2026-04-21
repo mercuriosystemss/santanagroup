@@ -106,7 +106,7 @@ export default function Hero() {
                 const el = document.querySelector('#contacto');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="text-sm px-8 py-4"
+              className="text-sm px-8 py-4 border-2 border-white/50 bg-white/15 hover:bg-white/25 transition-all"S
             >
               <span className="flex items-center gap-2">
                 Inicia tu proyecto <ArrowRight size={14} />
