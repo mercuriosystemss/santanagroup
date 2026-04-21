@@ -18,7 +18,7 @@ const projects = [
     title: 'Villa Moderna Caribe',
     location: 'Casa de Campo',
     category: 'villas' as Category,
-    image: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/1438761/pexels-photo-1438761.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2024',
   },
   {
@@ -26,7 +26,7 @@ const projects = [
     title: 'Resort Luxury Ocean',
     location: 'Punta Cana',
     category: 'resorts' as Category,
-    image: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/2121121/pexels-photo-2121121.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2024',
   },
   {
@@ -34,7 +34,7 @@ const projects = [
     title: 'Suite Master Elegante',
     location: 'Bayahibe',
     category: 'resorts' as Category,
-    image: 'https://images.pexels.com/photos/1522693/pexels-photo-1522693.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/279746/pexels-photo-279746.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2023',
   },
   {
@@ -50,7 +50,7 @@ const projects = [
     title: 'Penthouse Panorámico',
     location: 'La Romana',
     category: 'comercial' as Category,
-    image: 'https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/3756622/pexels-photo-3756622.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2023',
   },
   {
@@ -58,7 +58,7 @@ const projects = [
     title: 'Villa Paraíso',
     location: 'Casa de Campo',
     category: 'villas' as Category,
-    image: 'https://images.pexels.com/photos/1522693/pexels-photo-1522693.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: 'https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?auto=compress&cs=tinysrgb&w=800',
     year: '2022',
   },
 ];
