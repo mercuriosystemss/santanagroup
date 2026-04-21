@@ -34,7 +34,7 @@ export default function Footer() {
               <img
                 src="/santana-logo.png"
                 alt="RDSS Santana Group"
-                className="h-12 w-auto object-contain"
+                className="h-12 w-auto object-contain brightness-0 invert"
               />
             </div>
             <p className="font-montserrat text-sm text-offwhite/35 leading-relaxed mb-8 max-w-xs">

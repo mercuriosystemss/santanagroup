@@ -9,7 +9,7 @@ const floatingItems = [
   { Icon: Ruler, bottom: '28%', left: '15%', delay: '4s', size: 18 },
 ];
 
-const HERO_IMAGE = 'https://images.pexels.com/photos/3807517/pexels-photo-3807517.jpeg?auto=compress&cs=tinysrgb&w=1920';
+const HERO_IMAGE = 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=1920';
 
 export default function Hero() {
   const bgRef = useRef<HTMLDivElement>(null);
@@ -48,6 +48,7 @@ export default function Hero() {
           backgroundImage: `radial-gradient(ellipse at 20% 80%, rgba(255,255,255,0.03) 0%, transparent 60%)`,
         }}
       />
+      <div className="absolute inset-0 bg-black/60" />
 
       {floatingItems.map(({ Icon, top, left, right, bottom, delay, size }, i) => (
         <div
@@ -117,7 +118,7 @@ export default function Hero() {
                 const el = document.querySelector('#portfolio');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 border border-offwhite/15 text-offwhite/60 font-montserrat text-xs tracking-[0.2em] uppercase hover:border-offwhite/40 hover:text-offwhite transition-all duration-300 cursor-none"
+              className="px-8 py-4 border-2 border-offwhite/80 text-offwhite font-montserrat text-xs tracking-[0.2em] uppercase hover:bg-offwhite/10 hover:border-white transition-all duration-300 cursor-none"
             >
               Ver Portfolio
             </button>

@@ -30,8 +30,8 @@ function LocationPin({ loc, index, isActive, onClick }: {
       onClick={onClick}
     >
       <div className="relative group">
-        <div className={`relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 shadow-xl ${isActive ? 'bg-white scale-125' : 'bg-slate-700 border-2 border-white/60 hover:border-white hover:scale-110'}`}>
-          <MapPin size={18} className={isActive ? 'text-slate-900' : 'text-white'} />
+        <div className={`relative flex items-center justify-center w-14 h-14 rounded-full transition-all duration-300 shadow-xl ${isActive ? 'bg-white scale-125' : 'bg-slate-800 border-2 border-white hover:border-white hover:scale-110'}`}>
+          <MapPin size={24} className={isActive ? 'text-slate-900' : 'text-white'} />
           {!isActive && (
             <span className="absolute inset-0 rounded-full border border-offwhite/20 animate-ping" />
           )}
