@@ -106,10 +106,10 @@ export default function Hero() {
                 const el = document.querySelector('#contacto');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="text-sm px-8 py-4 border-2 border-white/50 bg-white/15 hover:bg-white/25 transition-all"S
+              className="text-sm px-8 py-4 border-2 border-gold/70 bg-gold/20 hover:bg-gold hover:text-obsidian hover:border-gold transition-all font-montserrat tracking-widest"
             >
-              <span className="flex items-center gap-2">
-                Inicia tu proyecto <ArrowRight size={14} />
+              <span className="flex items-center gap-2 font-semibold">
+                INICIA TU PROYECTO <ArrowRight size={14} />
               </span>
             </MagneticButton>
 
