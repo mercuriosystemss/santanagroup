@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useInView } from 'react-intersection-observer';
 import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 
@@ -124,11 +125,15 @@ export default function Footer() {
             © 2025 RDSS Santana Group. Todos los derechos reservados.
           </p>
           <div className="flex gap-6">
-            {['Privacidad', 'Términos'].map((t) => (
-              <button key={t} className="font-montserrat text-xs text-white/50 hover:text-offwhite/60 transition-colors cursor-none">
-                {t}
-              </button>
-            ))}
+            <Link to="/privacy-policy" className="font-montserrat text-xs text-white/50 hover:text-offwhite/70 transition-colors">
+              Privacidad
+            </Link>
+            <Link to="/cookie-policy" className="font-montserrat text-xs text-white/50 hover:text-offwhite/70 transition-colors">
+              Cookies
+            </Link>
+            <Link to="/termini-condizioni" className="font-montserrat text-xs text-white/50 hover:text-offwhite/70 transition-colors">
+              Términos
+            </Link>
           </div>
         </motion.div>
       </div>

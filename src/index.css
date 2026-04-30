@@ -238,3 +238,12 @@
     display: none;
   }
 }
+
+/* Legal content typography */
+.legal-text p { margin-bottom: 0.75rem; }
+.legal-text ul { list-style: none; padding-left: 0; margin-bottom: 0.75rem; }
+.legal-text ul li { padding-left: 1.25rem; position: relative; margin-bottom: 0.35rem; }
+.legal-text ul li::before { content: '—'; position: absolute; left: 0; color: rgba(255,255,255,0.3); }
+.legal-text strong { color: rgba(255,255,255,0.85); font-weight: 600; }
+.legal-text a { color: rgba(255,255,255,0.8); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+.legal-text a:hover { color: #FAFAFA; }

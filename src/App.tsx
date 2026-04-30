@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Stats from './components/Stats';
@@ -7,6 +8,10 @@ import Portfolio from './components/Portfolio';
 import Locations from './components/Locations';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
+import CookieBar from './components/CookieBar';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookiePolicy from './pages/CookiePolicy';
+import TerminiCondizioni from './pages/TerminiCondizioni';
 
 function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
@@ -61,7 +66,7 @@ function CustomCursor() {
   );
 }
 
-export default function App() {
+function HomePage() {
   return (
     <div className="bg-obsidian text-offwhite overflow-x-hidden">
       <div className="grain-overlay" aria-hidden="true" />
@@ -76,6 +81,20 @@ export default function App() {
         <ContactForm />
       </main>
       <Footer />
+      <CookieBar />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/termini-condizioni" element={<TerminiCondizioni />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
