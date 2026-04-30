@@ -2,145 +2,140 @@ import { Link } from 'react-router-dom';
 import LegalLayout from '../components/LegalLayout';
 
 const sections = [
-  { id: 'titolare', title: '1. Titolare del Trattamento' },
-  { id: 'dati-raccolti', title: '2. Dati Raccolti' },
-  { id: 'finalita', title: '3. Finalità del Trattamento' },
-  { id: 'base-giuridica', title: '4. Base Giuridica' },
-  { id: 'conservazione', title: '5. Conservazione dei Dati' },
-  { id: 'diritti', title: '6. I Tuoi Diritti' },
-  { id: 'trasferimento', title: '7. Trasferimento dei Dati' },
-  { id: 'minori', title: '8. Minori' },
-  { id: 'modifiche', title: '9. Modifiche alla Policy' },
-  { id: 'contatti', title: '10. Contatti' },
+  { id: 'responsable', title: '1. Responsable del Tratamiento' },
+  { id: 'datos-recogidos', title: '2. Datos Recopilados' },
+  { id: 'finalidad', title: '3. Finalidad del Tratamiento' },
+  { id: 'base-juridica', title: '4. Base Jurídica' },
+  { id: 'conservacion', title: '5. Conservación de los Datos' },
+  { id: 'derechos', title: '6. Tus Derechos' },
+  { id: 'transferencia', title: '7. Transferencia de Datos' },
+  { id: 'menores', title: '8. Menores de Edad' },
+  { id: 'cambios', title: '9. Cambios en esta Política' },
+  { id: 'contacto', title: '10. Contacto' },
 ];
 
 export default function PrivacyPolicy() {
   return (
     <LegalLayout
-      title="Privacy Policy"
-      subtitle="Informativa sul trattamento dei dati personali ai sensi del Regolamento (UE) 2016/679 (GDPR)"
-      lastUpdated="Aprile 2026"
+      title="Política de Privacidad"
+      subtitle="Información sobre el tratamiento de datos personales de RDSS Santana Group"
+      lastUpdated="Abril 2026"
       sections={sections}
     >
-      <Section id="titolare" title="1. Titolare del Trattamento">
+      <Section id="responsable" title="1. Responsable del Tratamiento">
         <p>
-          Il titolare del trattamento dei dati personali è <strong>RDSS Santana Group SRL</strong>, con sede legale in Av. Padre Abreu, La Romana, República Dominicana 22000 (di seguito "Società", "noi" o "Titolare").
+          El responsable del tratamiento de los datos personales es <strong>RDSS Santana Group SRL</strong>, con domicilio social en Av. Padre Abreu, La Romana, República Dominicana 22000 (en adelante "la Empresa", "nosotros" o "el Responsable").
         </p>
         <p>
-          Per qualsiasi comunicazione relativa alla presente Privacy Policy o all'esercizio dei tuoi diritti, puoi contattarci all'indirizzo email: <a href="mailto:info@santanagroup.com">info@santanagroup.com</a>.
+          Para cualquier consulta relacionada con esta Política de Privacidad o el ejercicio de tus derechos, puedes contactarnos en: <a href="mailto:info@santanagroup.com">info@santanagroup.com</a>.
         </p>
       </Section>
 
-      <Section id="dati-raccolti" title="2. Dati Raccolti">
-        <p>Raccogliamo i seguenti categorie di dati personali:</p>
-        <Subsection title="2.1 Dati forniti volontariamente">
+      <Section id="datos-recogidos" title="2. Datos Recopilados">
+        <p>Recopilamos las siguientes categorías de datos personales:</p>
+        <Subsection title="2.1 Datos proporcionados voluntariamente">
           <ul>
-            <li>Nome e cognome</li>
-            <li>Indirizzo email</li>
-            <li>Numero di telefono</li>
-            <li>Contenuto dei messaggi inviati tramite il modulo di contatto</li>
+            <li>Nombre y apellidos</li>
+            <li>Dirección de correo electrónico</li>
+            <li>Número de teléfono</li>
+            <li>Contenido de los mensajes enviados a través del formulario de contacto</li>
           </ul>
         </Subsection>
-        <Subsection title="2.2 Dati raccolti automaticamente">
+        <Subsection title="2.2 Datos recopilados automáticamente">
           <ul>
-            <li>Indirizzo IP e dati di navigazione</li>
-            <li>Tipo di browser e sistema operativo</li>
-            <li>Pagine visitate e durata della sessione</li>
-            <li>Dati raccolti tramite cookie (vedi <Link to="/cookie-policy">Cookie Policy</Link>)</li>
+            <li>Dirección IP y datos de navegación</li>
+            <li>Tipo de navegador y sistema operativo</li>
+            <li>Páginas visitadas y duración de la sesión</li>
+            <li>Datos recopilados mediante cookies (ver <Link to="/politica-cookies">Política de Cookies</Link>)</li>
           </ul>
         </Subsection>
       </Section>
 
-      <Section id="finalita" title="3. Finalità del Trattamento">
-        <p>I dati personali vengono trattati per le seguenti finalità:</p>
+      <Section id="finalidad" title="3. Finalidad del Tratamiento">
+        <p>Los datos personales se tratan con las siguientes finalidades:</p>
         <ul>
-          <li><strong>Gestione delle richieste di contatto</strong> — elaborazione delle richieste inviate tramite il modulo di contatto e comunicazione della risposta.</li>
-          <li><strong>Adempimenti contrattuali</strong> — gestione dei rapporti contrattuali con clienti e fornitori.</li>
-          <li><strong>Obblighi di legge</strong> — adempimento degli obblighi previsti dalla normativa vigente in Repubblica Dominicana e nell'Unione Europea.</li>
-          <li><strong>Analisi statistica</strong> — miglioramento dei servizi e del sito web attraverso analisi aggregate e anonimizzate.</li>
-          <li><strong>Marketing</strong> — invio di comunicazioni promozionali, solo previo consenso esplicito dell'interessato.</li>
+          <li><strong>Gestión de solicitudes de contacto</strong> — atender las consultas enviadas a través del formulario y dar respuesta al usuario.</li>
+          <li><strong>Cumplimiento contractual</strong> — gestión de las relaciones contractuales con clientes y proveedores.</li>
+          <li><strong>Obligaciones legales</strong> — cumplimiento de las obligaciones establecidas por la normativa vigente en República Dominicana.</li>
+          <li><strong>Análisis estadístico</strong> — mejora de los servicios y del sitio web mediante análisis agregados y anonimizados.</li>
+          <li><strong>Marketing</strong> — envío de comunicaciones promocionales, únicamente con el consentimiento expreso del interesado.</li>
         </ul>
       </Section>
 
-      <Section id="base-giuridica" title="4. Base Giuridica del Trattamento">
-        <p>Il trattamento dei tuoi dati personali si basa sulle seguenti basi giuridiche:</p>
+      <Section id="base-juridica" title="4. Base Jurídica del Tratamiento">
+        <p>El tratamiento de tus datos personales se fundamenta en las siguientes bases jurídicas:</p>
         <ul>
-          <li><strong>Esecuzione di un contratto</strong> (art. 6, par. 1, lett. b GDPR) — per la gestione delle richieste e dei rapporti contrattuali.</li>
-          <li><strong>Consenso</strong> (art. 6, par. 1, lett. a GDPR) — per l'invio di comunicazioni di marketing e per l'utilizzo di cookie non essenziali.</li>
-          <li><strong>Obbligo legale</strong> (art. 6, par. 1, lett. c GDPR) — per adempimenti normativi.</li>
-          <li><strong>Interesse legittimo</strong> (art. 6, par. 1, lett. f GDPR) — per la sicurezza del sito e il miglioramento dei servizi.</li>
+          <li><strong>Ejecución de un contrato</strong> — para la gestión de consultas y relaciones contractuales.</li>
+          <li><strong>Consentimiento</strong> — para el envío de comunicaciones de marketing y el uso de cookies no esenciales.</li>
+          <li><strong>Obligación legal</strong> — para el cumplimiento de requisitos normativos.</li>
+          <li><strong>Interés legítimo</strong> — para la seguridad del sitio y la mejora de los servicios.</li>
         </ul>
       </Section>
 
-      <Section id="conservazione" title="5. Conservazione dei Dati">
-        <p>I dati personali vengono conservati per il tempo strettamente necessario al raggiungimento delle finalità per cui sono stati raccolti:</p>
+      <Section id="conservacion" title="5. Conservación de los Datos">
+        <p>Los datos personales se conservan durante el tiempo estrictamente necesario para cumplir con las finalidades para las que fueron recopilados:</p>
         <ul>
-          <li><strong>Dati di contatto</strong> — 24 mesi dalla ricezione della richiesta, salvo necessità di conservazione per obblighi legali.</li>
-          <li><strong>Dati contrattuali</strong> — per la durata del contratto e per i successivi 10 anni, in conformità agli obblighi fiscali e legali.</li>
-          <li><strong>Dati di navigazione</strong> — 13 mesi dalla raccolta.</li>
-          <li><strong>Dati di marketing</strong> — fino alla revoca del consenso.</li>
+          <li><strong>Datos de contacto</strong> — 24 meses desde la recepción de la solicitud, salvo obligación legal de conservación.</li>
+          <li><strong>Datos contractuales</strong> — durante la vigencia del contrato y los 10 años posteriores, conforme a obligaciones fiscales y legales.</li>
+          <li><strong>Datos de navegación</strong> — 13 meses desde su recopilación.</li>
+          <li><strong>Datos de marketing</strong> — hasta la revocación del consentimiento.</li>
         </ul>
-        <p>Al termine del periodo di conservazione, i dati verranno cancellati o anonimizzati in modo irreversibile.</p>
+        <p>Transcurrido el periodo de conservación, los datos serán eliminados o anonimizados de forma irreversible.</p>
       </Section>
 
-      <Section id="diritti" title="6. I Tuoi Diritti">
-        <p>In qualità di interessato, hai i seguenti diritti ai sensi del GDPR:</p>
+      <Section id="derechos" title="6. Tus Derechos">
+        <p>Como titular de los datos, tienes los siguientes derechos:</p>
         <ul>
-          <li><strong>Diritto di accesso</strong> (art. 15) — ottenere conferma del trattamento e copia dei dati personali.</li>
-          <li><strong>Diritto di rettifica</strong> (art. 16) — correggere dati inesatti o incompleti.</li>
-          <li><strong>Diritto alla cancellazione</strong> (art. 17) — "diritto all'oblio" in determinati casi.</li>
-          <li><strong>Diritto alla limitazione</strong> (art. 18) — limitare il trattamento in determinate circostanze.</li>
-          <li><strong>Diritto alla portabilità</strong> (art. 20) — ricevere i dati in formato strutturato e leggibile.</li>
-          <li><strong>Diritto di opposizione</strong> (art. 21) — opporsi al trattamento basato su interesse legittimo o per marketing diretto.</li>
-          <li><strong>Diritto di revoca del consenso</strong> — revocare in qualsiasi momento il consenso prestato, senza pregiudizio per la liceità del trattamento precedente.</li>
-        </ul>
-        <p>
-          Per esercitare i tuoi diritti, invia una richiesta scritta a <a href="mailto:info@santanagroup.com">info@santanagroup.com</a>. Risponderemo entro 30 giorni.
-        </p>
-        <p>
-          Hai inoltre il diritto di proporre reclamo all'autorità di controllo competente.
-        </p>
-      </Section>
-
-      <Section id="trasferimento" title="7. Trasferimento dei Dati a Terzi">
-        <p>I tuoi dati personali possono essere condivisi con:</p>
-        <ul>
-          <li>Fornitori di servizi tecnici (hosting, email, analisi) che agiscono come responsabili del trattamento.</li>
-          <li>Professionisti e consulenti (legali, fiscali, contabili) per adempimenti obbligatori.</li>
-          <li>Autorità pubbliche, quando richiesto dalla legge.</li>
+          <li><strong>Derecho de acceso</strong> — obtener confirmación del tratamiento y una copia de tus datos personales.</li>
+          <li><strong>Derecho de rectificación</strong> — corregir datos inexactos o incompletos.</li>
+          <li><strong>Derecho de supresión</strong> — solicitar la eliminación de tus datos en determinados supuestos.</li>
+          <li><strong>Derecho de limitación</strong> — restringir el tratamiento en determinadas circunstancias.</li>
+          <li><strong>Derecho de portabilidad</strong> — recibir tus datos en un formato estructurado y legible por máquina.</li>
+          <li><strong>Derecho de oposición</strong> — oponerte al tratamiento basado en interés legítimo o con fines de marketing directo.</li>
+          <li><strong>Derecho a revocar el consentimiento</strong> — en cualquier momento, sin que ello afecte a la licitud del tratamiento previo.</li>
         </ul>
         <p>
-          Non vendiamo né cediamo i tuoi dati personali a terzi per finalità proprie. Qualsiasi trasferimento avviene in conformità al GDPR e con le garanzie adeguate richieste per i trasferimenti internazionali.
+          Para ejercer tus derechos, envía una solicitud escrita a <a href="mailto:info@santanagroup.com">info@santanagroup.com</a>. Responderemos en un plazo máximo de 30 días.
         </p>
       </Section>
 
-      <Section id="minori" title="8. Minori">
+      <Section id="transferencia" title="7. Transferencia de Datos a Terceros">
+        <p>Tus datos personales podrán ser compartidos con:</p>
+        <ul>
+          <li>Proveedores de servicios técnicos (alojamiento web, correo electrónico, análisis) que actúan como encargados del tratamiento.</li>
+          <li>Profesionales y asesores (legales, fiscales, contables) para el cumplimiento de obligaciones.</li>
+          <li>Autoridades públicas, cuando así lo exija la ley.</li>
+        </ul>
         <p>
-          I nostri servizi non sono destinati a persone di età inferiore ai 18 anni. Non raccogliamo consapevolmente dati personali di minori. Qualora venissimo a conoscenza di aver raccolto dati di un minore, li cancelleremo immediatamente.
+          No vendemos ni cedemos tus datos personales a terceros para fines propios. Cualquier transferencia se realiza con las garantías adecuadas exigidas por la normativa aplicable.
         </p>
       </Section>
 
-      <Section id="modifiche" title="9. Modifiche alla Privacy Policy">
+      <Section id="menores" title="8. Menores de Edad">
         <p>
-          Ci riserviamo il diritto di aggiornare la presente Privacy Policy in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina con l'indicazione della data di ultimo aggiornamento. Per modifiche sostanziali, ti informeremo tramite un avviso prominente sul sito o via email.
-        </p>
-        <p>
-          Ti invitiamo a consultare periodicamente questa pagina.
+          Nuestros servicios no están dirigidos a personas menores de 18 años. No recopilamos conscientemente datos personales de menores. Si tomamos conocimiento de haber recopilado datos de un menor, los eliminaremos de inmediato.
         </p>
       </Section>
 
-      <Section id="contatti" title="10. Contatti">
-        <p>Per qualsiasi domanda, dubbio o richiesta relativa alla presente Privacy Policy o al trattamento dei tuoi dati personali:</p>
+      <Section id="cambios" title="9. Cambios en esta Política">
+        <p>
+          Nos reservamos el derecho de actualizar esta Política de Privacidad en cualquier momento. Los cambios se publicarán en esta página con la fecha de última actualización. Para modificaciones sustanciales, te informaremos mediante un aviso destacado en el sitio o por correo electrónico.
+        </p>
+        <p>Te recomendamos consultar esta página periódicamente.</p>
+      </Section>
+
+      <Section id="contacto" title="10. Contacto">
+        <p>Para cualquier consulta sobre esta Política de Privacidad o el tratamiento de tus datos personales:</p>
         <ul>
           <li><strong>Email:</strong> <a href="mailto:info@santanagroup.com">info@santanagroup.com</a></li>
-          <li><strong>Indirizzo:</strong> Av. Padre Abreu, La Romana, República Dominicana 22000</li>
-          <li><strong>Telefono:</strong> +1 (809) 000-0000</li>
+          <li><strong>Dirección:</strong> Av. Padre Abreu, La Romana, República Dominicana 22000</li>
+          <li><strong>Teléfono:</strong> +1 (809) 000-0000</li>
         </ul>
         <p className="mt-6 text-sm">
-          Consulta anche:{' '}
-          <Link to="/cookie-policy">Cookie Policy</Link>
+          Consulta también:{' '}
+          <Link to="/politica-cookies">Política de Cookies</Link>
           {' '}·{' '}
-          <Link to="/termini-condizioni">Termini e Condizioni</Link>
+          <Link to="/terminos-condiciones">Términos y Condiciones</Link>
         </p>
       </Section>
     </LegalLayout>

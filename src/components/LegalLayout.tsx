@@ -5,9 +5,9 @@ import { ArrowLeft, ArrowUp, ChevronRight } from 'lucide-react';
 import Footer from './Footer';
 
 const LEGAL_LABELS: Record<string, string> = {
-  '/privacy-policy': 'Privacy Policy',
-  '/cookie-policy': 'Cookie Policy',
-  '/termini-condizioni': 'Termini e Condizioni',
+  '/politica-privacidad': 'Política de Privacidad',
+  '/politica-cookies': 'Política de Cookies',
+  '/terminos-condiciones': 'Términos y Condiciones',
 };
 
 interface Section {
@@ -38,7 +38,6 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children, se
 
   return (
     <div className="bg-obsidian text-offwhite min-h-screen flex flex-col">
-      {/* Minimal nav */}
       <header className="sticky top-0 z-50 bg-obsidian/95 backdrop-blur-md border-b border-white/8">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center">
@@ -59,14 +58,12 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children, se
         </div>
       </header>
 
-      {/* Hero strip */}
       <div className="relative border-b border-white/8 py-14 overflow-hidden">
         <div
           className="absolute inset-0 opacity-30 pointer-events-none"
           style={{ backgroundImage: 'radial-gradient(ellipse at 20% 50%, rgba(255,255,255,0.03) 0%, transparent 60%)' }}
         />
         <div className="max-w-4xl mx-auto px-6 lg:px-10">
-          {/* Breadcrumb */}
           <nav aria-label="breadcrumb" className="flex items-center gap-1.5 mb-6">
             <Link to="/" className="font-montserrat text-xs text-white/45 hover:text-white/70 transition-colors">
               Inicio
@@ -86,18 +83,17 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children, se
             </div>
             <h1 className="font-playfair text-4xl md:text-5xl font-bold text-white mb-3">{title}</h1>
             <p className="font-montserrat text-sm text-white/55">{subtitle}</p>
-            <p className="font-montserrat text-xs text-white/35 mt-2">Ultimo aggiornamento: {lastUpdated}</p>
+            <p className="font-montserrat text-xs text-white/35 mt-2">Última actualización: {lastUpdated}</p>
           </motion.div>
         </div>
       </div>
 
       <div className="flex-1 max-w-4xl mx-auto px-6 lg:px-10 py-16 w-full">
         <div className="flex gap-14">
-          {/* Sidebar ToC — desktop only */}
           {sections && sections.length > 0 && (
             <aside className="hidden xl:block w-52 flex-shrink-0">
               <div className="sticky top-24">
-                <p className="font-montserrat text-xs font-semibold tracking-[0.3em] uppercase text-white/40 mb-4">Contenuto</p>
+                <p className="font-montserrat text-xs font-semibold tracking-[0.3em] uppercase text-white/40 mb-4">Contenido</p>
                 <nav className="space-y-1">
                   {sections.map((s) => (
                     <a
@@ -111,7 +107,7 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children, se
                 </nav>
 
                 <div className="mt-8 pt-6 border-t border-white/10 space-y-1">
-                  <p className="font-montserrat text-xs text-white/35 mb-2">Altre pagine legali</p>
+                  <p className="font-montserrat text-xs text-white/35 mb-2">Otras páginas legales</p>
                   {Object.entries(LEGAL_LABELS)
                     .filter(([path]) => path !== pathname)
                     .map(([path, label]) => (
@@ -128,7 +124,6 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children, se
             </aside>
           )}
 
-          {/* Main content */}
           <motion.article
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -142,13 +137,12 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children, se
 
       <Footer />
 
-      {/* Back to top */}
       <motion.button
         animate={{ opacity: showTop ? 1 : 0, y: showTop ? 0 : 10 }}
         transition={{ duration: 0.3 }}
         onClick={scrollTop}
-        className="fixed bottom-8 right-8 z-50 w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-white/85 transition-colors cursor-none shadow-lg pointer-events-auto"
-        aria-label="Torna su"
+        className="fixed bottom-8 right-8 z-50 w-10 h-10 bg-white text-black flex items-center justify-center hover:bg-white/85 transition-colors cursor-none shadow-lg"
+        aria-label="Volver arriba"
         style={{ pointerEvents: showTop ? 'auto' : 'none' }}
       >
         <ArrowUp size={16} />

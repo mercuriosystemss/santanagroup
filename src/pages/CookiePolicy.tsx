@@ -2,77 +2,73 @@ import { Link } from 'react-router-dom';
 import LegalLayout from '../components/LegalLayout';
 
 const sections = [
-  { id: 'cosa-sono', title: '1. Cosa Sono i Cookie' },
-  { id: 'tipologie', title: '2. Tipologie di Cookie' },
-  { id: 'cookie-usati', title: '3. Cookie Utilizzati' },
-  { id: 'terze-parti', title: '4. Cookie di Terze Parti' },
-  { id: 'gestione', title: '5. Gestione dei Cookie' },
-  { id: 'preferenze', title: '6. Le Tue Preferenze' },
-  { id: 'contatti', title: '7. Contatti' },
+  { id: 'que-son', title: '1. ¿Qué Son las Cookies?' },
+  { id: 'tipos', title: '2. Tipos de Cookies' },
+  { id: 'cookies-usadas', title: '3. Cookies Utilizadas' },
+  { id: 'terceros', title: '4. Cookies de Terceros' },
+  { id: 'gestion', title: '5. Gestión desde el Navegador' },
+  { id: 'preferencias', title: '6. Tus Preferencias' },
+  { id: 'contacto', title: '7. Contacto' },
 ];
 
 export default function CookiePolicy() {
   return (
     <LegalLayout
-      title="Cookie Policy"
-      subtitle="Informativa sull'uso dei cookie e tecnologie di tracciamento sul sito web di RDSS Santana Group"
-      lastUpdated="Aprile 2026"
+      title="Política de Cookies"
+      subtitle="Información sobre el uso de cookies y tecnologías de seguimiento en el sitio web de RDSS Santana Group"
+      lastUpdated="Abril 2026"
       sections={sections}
     >
-      <Section id="cosa-sono" title="1. Cosa Sono i Cookie">
+      <Section id="que-son" title="1. ¿Qué Son las Cookies?">
         <p>
-          I cookie sono piccoli file di testo che i siti web memorizzano sul dispositivo dell'utente durante la navigazione. Vengono utilizzati per far funzionare correttamente il sito, migliorare l'esperienza utente e raccogliere informazioni statistiche.
+          Las cookies son pequeños archivos de texto que los sitios web almacenan en el dispositivo del usuario durante la navegación. Se utilizan para que el sitio funcione correctamente, mejorar la experiencia del usuario y recopilar información estadística.
         </p>
         <p>
-          Tecnologie simili ai cookie — come pixel, web beacon e local storage — possono essere utilizzate per scopi analoghi. Nel presente documento, ci riferiamo a tutte queste tecnologie con il termine "cookie".
+          Tecnologías similares a las cookies —como píxeles, web beacons y almacenamiento local— pueden usarse con fines equivalentes. En este documento, nos referimos a todas estas tecnologías con el término "cookies".
         </p>
       </Section>
 
-      <Section id="tipologie" title="2. Tipologie di Cookie">
+      <Section id="tipos" title="2. Tipos de Cookies">
         <div className="space-y-5">
           <CookieCategory
-            label="Necessari"
-            color="bg-white/15"
-            desc="Indispensabili per il funzionamento del sito. Senza di essi alcune funzionalità non sarebbero disponibili. Non richiedono consenso."
+            label="Necesarias"
+            desc="Imprescindibles para el funcionamiento del sitio. Sin ellas algunas funcionalidades no estarían disponibles. No requieren consentimiento."
           />
           <CookieCategory
-            label="Analitici"
-            color="bg-white/10"
-            desc="Raccolgono informazioni anonime su come gli utenti utilizzano il sito (pagine visitate, tempo di permanenza, errori). Aiutano a migliorare le prestazioni."
+            label="Analíticas"
+            desc="Recopilan información anónima sobre cómo los usuarios utilizan el sitio (páginas visitadas, tiempo de permanencia, errores). Ayudan a mejorar el rendimiento."
           />
           <CookieCategory
-            label="Funzionali"
-            color="bg-white/8"
-            desc="Permettono al sito di ricordare le scelte dell'utente (lingua, preferenze) per offrire un'esperienza personalizzata."
+            label="Funcionales"
+            desc="Permiten al sitio recordar las elecciones del usuario (idioma, preferencias) para ofrecer una experiencia personalizada."
           />
           <CookieCategory
             label="Marketing"
-            color="bg-white/5"
-            desc="Utilizzati per mostrare annunci pertinenti agli interessi dell'utente. Possono essere condivisi con partner pubblicitari terzi."
+            desc="Utilizadas para mostrar anuncios relevantes según los intereses del usuario. Pueden compartirse con socios publicitarios externos."
           />
         </div>
       </Section>
 
-      <Section id="cookie-usati" title="3. Cookie Utilizzati su Questo Sito">
-        <p>La tabella seguente elenca i cookie presenti su questo sito:</p>
+      <Section id="cookies-usadas" title="3. Cookies Utilizadas en Este Sitio">
+        <p>La siguiente tabla detalla las cookies presentes en este sitio:</p>
 
         <div className="mt-4 overflow-x-auto">
           <table className="w-full text-xs border-collapse">
             <thead>
               <tr className="border-b border-white/15">
-                <th className="text-left py-3 pr-4 font-semibold text-white/70 tracking-widest uppercase">Nome</th>
+                <th className="text-left py-3 pr-4 font-semibold text-white/70 tracking-widest uppercase">Nombre</th>
                 <th className="text-left py-3 pr-4 font-semibold text-white/70 tracking-widest uppercase">Tipo</th>
-                <th className="text-left py-3 pr-4 font-semibold text-white/70 tracking-widest uppercase">Durata</th>
-                <th className="text-left py-3 font-semibold text-white/70 tracking-widest uppercase">Scopo</th>
+                <th className="text-left py-3 pr-4 font-semibold text-white/70 tracking-widest uppercase">Duración</th>
+                <th className="text-left py-3 font-semibold text-white/70 tracking-widest uppercase">Finalidad</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-white/6">
               {[
-                { name: 'santana_cookie_consent', type: 'Necessario', duration: '12 mesi', desc: 'Salva le preferenze cookie dell\'utente' },
-                { name: '_ga', type: 'Analitico', duration: '2 anni', desc: 'Google Analytics — distingue gli utenti' },
-                { name: '_ga_*', type: 'Analitico', duration: '2 anni', desc: 'Google Analytics — mantiene lo stato della sessione' },
-                { name: '_gid', type: 'Analitico', duration: '24 ore', desc: 'Google Analytics — distingue gli utenti' },
-                { name: 'sb-*-auth-token', type: 'Necessario', duration: 'Sessione', desc: 'Autenticazione Supabase' },
+                { name: 'santana_cookie_consent', type: 'Necesaria', duration: '12 meses', desc: 'Guarda las preferencias de cookies del usuario' },
+                { name: '_ga', type: 'Analítica', duration: '2 años', desc: 'Google Analytics — distingue usuarios únicos' },
+                { name: '_ga_*', type: 'Analítica', duration: '2 años', desc: 'Google Analytics — mantiene el estado de la sesión' },
+                { name: '_gid', type: 'Analítica', duration: '24 horas', desc: 'Google Analytics — distingue usuarios' },
+                { name: 'sb-*-auth-token', type: 'Necesaria', duration: 'Sesión', desc: 'Autenticación Supabase' },
               ].map((row) => (
                 <tr key={row.name}>
                   <td className="py-3 pr-4 font-mono text-white/80">{row.name}</td>
@@ -86,34 +82,34 @@ export default function CookiePolicy() {
         </div>
       </Section>
 
-      <Section id="terze-parti" title="4. Cookie di Terze Parti">
-        <p>Alcuni cookie sono impostati da servizi di terze parti che appaiono sulle nostre pagine. Non abbiamo controllo diretto su questi cookie.</p>
+      <Section id="terceros" title="4. Cookies de Terceros">
+        <p>Algunas cookies son instaladas por servicios de terceros que aparecen en nuestras páginas. No tenemos control directo sobre estas cookies.</p>
         <ul>
           <li>
-            <strong>Google Analytics</strong> — utilizziamo Google Analytics per analisi statistiche. Google può utilizzare i dati per i propri scopi pubblicitari. Informativa: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>
+            <strong>Google Analytics</strong> — utilizamos Google Analytics para análisis estadístico. Google puede usar los datos con fines publicitarios propios. Política: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>
           </li>
           <li>
-            <strong>Instagram / Meta</strong> — il link al nostro profilo Instagram può comportare il caricamento di risorse Meta. Informativa: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">facebook.com/privacy/policy</a>
+            <strong>Instagram / Meta</strong> — el enlace a nuestro perfil de Instagram puede implicar la carga de recursos de Meta. Política: <a href="https://www.facebook.com/privacy/policy/" target="_blank" rel="noopener noreferrer">facebook.com/privacy/policy</a>
           </li>
         </ul>
       </Section>
 
-      <Section id="gestione" title="5. Gestione dei Cookie tramite Browser">
-        <p>Puoi gestire, disabilitare o eliminare i cookie direttamente dal tuo browser. Le istruzioni per i principali browser:</p>
+      <Section id="gestion" title="5. Gestión desde el Navegador">
+        <p>Puedes gestionar, desactivar o eliminar las cookies directamente desde tu navegador. Instrucciones para los principales navegadores:</p>
         <ul>
-          <li><strong>Google Chrome</strong> — Impostazioni → Privacy e sicurezza → Cookie e altri dati dei siti</li>
-          <li><strong>Mozilla Firefox</strong> — Preferenze → Privacy e sicurezza → Cookie e dati dei siti</li>
-          <li><strong>Safari</strong> — Preferenze → Privacy → Gestisci dati dei siti web</li>
-          <li><strong>Microsoft Edge</strong> — Impostazioni → Cookie e autorizzazioni del sito</li>
+          <li><strong>Google Chrome</strong> — Configuración → Privacidad y seguridad → Cookies y otros datos de sitios</li>
+          <li><strong>Mozilla Firefox</strong> — Preferencias → Privacidad y seguridad → Cookies y datos del sitio</li>
+          <li><strong>Safari</strong> — Preferencias → Privacidad → Gestionar datos de sitios web</li>
+          <li><strong>Microsoft Edge</strong> — Configuración → Cookies y permisos del sitio</li>
         </ul>
         <p>
-          Attenzione: la disabilitazione dei cookie necessari potrebbe compromettere il corretto funzionamento del sito.
+          Atención: deshabilitar las cookies necesarias puede comprometer el correcto funcionamiento del sitio.
         </p>
       </Section>
 
-      <Section id="preferenze" title="6. Le Tue Preferenze">
+      <Section id="preferencias" title="6. Tus Preferencias">
         <p>
-          Puoi modificare le tue preferenze cookie in qualsiasi momento tramite il banner che appare alla prima visita o cliccando sul pulsante qui sotto.
+          Puedes modificar tus preferencias de cookies en cualquier momento a través del banner que aparece en la primera visita o haciendo clic en el botón de abajo.
         </p>
         <button
           onClick={() => {
@@ -122,24 +118,24 @@ export default function CookiePolicy() {
           }}
           className="mt-4 inline-flex items-center gap-2 font-montserrat text-xs tracking-widest uppercase px-5 py-2.5 border border-white/30 text-white hover:bg-white hover:text-black transition-all duration-300 cursor-none"
         >
-          Modifica preferenze cookie
+          Modificar preferencias de cookies
         </button>
         <p className="mt-4">
-          Per ulteriori informazioni sul trattamento dei dati personali, consulta la nostra <Link to="/privacy-policy">Privacy Policy</Link>.
+          Para más información sobre el tratamiento de tus datos personales, consulta nuestra <Link to="/politica-privacidad">Política de Privacidad</Link>.
         </p>
       </Section>
 
-      <Section id="contatti" title="7. Contatti">
-        <p>Per qualsiasi domanda relativa all'uso dei cookie su questo sito:</p>
+      <Section id="contacto" title="7. Contacto">
+        <p>Para cualquier consulta relacionada con el uso de cookies en este sitio:</p>
         <ul>
           <li><strong>Email:</strong> <a href="mailto:info@santanagroup.com">info@santanagroup.com</a></li>
-          <li><strong>Indirizzo:</strong> Av. Padre Abreu, La Romana, República Dominicana 22000</li>
+          <li><strong>Dirección:</strong> Av. Padre Abreu, La Romana, República Dominicana 22000</li>
         </ul>
         <p className="mt-6 text-sm">
-          Consulta anche:{' '}
-          <Link to="/privacy-policy">Privacy Policy</Link>
+          Consulta también:{' '}
+          <Link to="/politica-privacidad">Política de Privacidad</Link>
           {' '}·{' '}
-          <Link to="/termini-condizioni">Termini e Condizioni</Link>
+          <Link to="/terminos-condiciones">Términos y Condiciones</Link>
         </p>
       </Section>
     </LegalLayout>
@@ -157,9 +153,9 @@ function Section({ id, title, children }: { id: string; title: string; children:
   );
 }
 
-function CookieCategory({ label, color, desc }: { label: string; color: string; desc: string }) {
+function CookieCategory({ label, desc }: { label: string; desc: string }) {
   return (
-    <div className={`flex items-start gap-4 p-4 border border-white/10 rounded-sm ${color}`}>
+    <div className="flex items-start gap-4 p-4 border border-white/10 rounded-sm bg-white/3">
       <div className="flex-shrink-0 mt-0.5">
         <span className="font-montserrat text-xs font-bold tracking-widest uppercase text-white/70 border border-white/20 px-2 py-1 rounded-sm">
           {label}

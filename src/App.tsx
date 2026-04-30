@@ -91,9 +91,9 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/cookie-policy" element={<CookiePolicy />} />
-        <Route path="/termini-condizioni" element={<TerminiCondizioni />} />
+        <Route path="/politica-privacidad" element={<PrivacyPolicy />} />
+        <Route path="/politica-cookies" element={<CookiePolicy />} />
+        <Route path="/terminos-condiciones" element={<TerminiCondizioni />} />
       </Routes>
     </BrowserRouter>
   );
