@@ -71,15 +71,15 @@ function StatCard({ stat, index, started }: { stat: typeof stats[0]; index: numb
       style={{ transformStyle: 'preserve-3d' }}
     >
       <div className="p-3 bg-white/5 rounded-sm border border-white/10">
-        <Icon size={22} className="text-offwhite/70" />
+        <Icon size={22} className="text-white/80" />
       </div>
       <div>
         <div className="font-playfair text-5xl md:text-6xl font-bold text-offwhite leading-none">
           {count}
-          <span className="text-grey-light">{stat.suffix}</span>
+          <span className="text-white/70">{stat.suffix}</span>
         </div>
         <div className="font-montserrat font-semibold text-offwhite text-sm tracking-widest uppercase mt-2">{stat.label}</div>
-        <div className="font-montserrat text-offwhite/40 text-xs mt-1">{stat.sublabel}</div>
+        <div className="font-montserrat text-white/55 text-xs mt-1">{stat.sublabel}</div>
       </div>
     </motion.div>
   );
@@ -108,7 +108,7 @@ export default function Stats() {
         >
           <div className="flex items-center justify-center gap-3 mb-4">
             <div className="h-px w-8 bg-offwhite/30" />
-            <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-offwhite/40">Nuestra Trayectoria</span>
+            <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-white/65">Nuestra Trayectoria</span>
             <div className="h-px w-8 bg-offwhite/30" />
           </div>
           <h2 className="font-playfair text-4xl md:text-5xl font-bold text-offwhite">

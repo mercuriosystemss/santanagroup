@@ -2,15 +2,14 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Send, CheckCircle } from 'lucide-react';
-import { MagneticButton } from './Navbar';
 
 const inputClass = `
-  w-full bg-dark-card border border-white/8 text-offwhite font-montserrat text-sm px-4 py-3.5
-  focus:outline-none focus:border-white/30 transition-colors duration-300 placeholder:text-offwhite/20
-  hover:border-white/15 rounded-sm cursor-none
+  w-full bg-dark-card border border-white/20 text-white font-montserrat text-sm px-4 py-3.5
+  focus:outline-none focus:border-white/50 transition-colors duration-300 placeholder:text-white/35
+  hover:border-white/35 rounded-sm cursor-none
 `;
 
-const labelClass = 'block font-montserrat text-xs font-medium text-offwhite/50 uppercase tracking-widest mb-2';
+const labelClass = 'block font-montserrat text-xs font-medium text-white/75 uppercase tracking-widest mb-2';
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -44,14 +43,14 @@ export default function ContactForm() {
           >
             <div className="flex items-center justify-center gap-3 mb-4">
               <div className="h-px w-8 bg-offwhite/30" />
-              <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-offwhite/40">Hablemos</span>
+              <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-white/65">Hablemos</span>
               <div className="h-px w-8 bg-offwhite/30" />
             </div>
             <h2 className="font-playfair text-4xl md:text-6xl font-bold text-offwhite mb-5">
               Inicia tu<br />
               <span className="mono-gradient">proyecto hoy</span>
             </h2>
-            <p className="font-montserrat text-offwhite/40 text-sm max-w-lg mx-auto leading-relaxed">
+            <p className="font-montserrat text-white/65 text-sm max-w-lg mx-auto leading-relaxed">
               Contáctanos hoy y transformemos tu visión en realidad. Consulta inicial completamente gratuita.
             </p>
           </motion.div>
@@ -75,7 +74,7 @@ export default function ContactForm() {
               <h3 className="font-playfair text-3xl font-bold text-offwhite text-center">
                 Mensaje Enviado
               </h3>
-              <p className="font-montserrat text-offwhite/40 text-sm text-center max-w-xs">
+              <p className="font-montserrat text-white/65 text-sm text-center max-w-xs">
                 Gracias por contactarnos. Uno de nuestros expertos se pondrá en contacto contigo en menos de 24 horas.
               </p>
               <button
@@ -146,18 +145,22 @@ export default function ContactForm() {
               </div>
 
               <div className="flex justify-center pt-2">
-                <MagneticButton className="px-10 py-4 text-sm flex items-center gap-2">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="px-10 py-4 border-2 border-white bg-white/10 text-white font-montserrat text-xs font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all duration-300 cursor-none disabled:opacity-60 disabled:cursor-not-allowed"
+                >
                   {loading ? (
                     <span className="flex items-center gap-2">
-                      <span className="w-4 h-4 border-2 border-obsidian border-t-transparent rounded-full animate-spin" />
+                      <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                       Enviando...
                     </span>
                   ) : (
                     <span className="flex items-center gap-2">
-                      Solicitar Consulta Gratuita <Send size={14} />
+                      SOLICITAR CONSULTA GRATUITA <Send size={14} />
                     </span>
                   )}
-                </MagneticButton>
+                </button>
               </div>
             </form>
           )}

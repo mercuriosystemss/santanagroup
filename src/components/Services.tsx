@@ -108,7 +108,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             <div className="flex items-center gap-3">
               <div className={`h-px w-6 ${hasLogo ? 'bg-obsidian/20' : 'bg-offwhite/30'}`} />
               <span className={`font-montserrat text-xs tracking-[0.3em] uppercase ${
-                hasLogo ? 'text-obsidian/50' : 'text-offwhite/40'
+                hasLogo ? 'text-obsidian/70' : 'text-white/60'
               }`}>{service.number}</span>
             </div>
             {hasLogo && (
@@ -130,8 +130,8 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
           </h3>
           <p className={`font-montserrat text-sm leading-relaxed mb-6 ${
             hasLogo
-              ? 'text-obsidian/60'
-              : 'text-offwhite/50'
+              ? 'text-obsidian/80'
+              : 'text-white/70'
           }`}>
             {service.description}
           </p>
@@ -139,13 +139,13 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
             {service.features.map((f) => (
               <li key={f} className={`flex items-center gap-2 font-montserrat text-xs ${
                 hasLogo
-                  ? 'text-obsidian/40'
-                  : 'text-offwhite/35'
+                  ? 'text-obsidian/70'
+                  : 'text-white/65'
               }`}>
                 <span className={`w-1 h-1 rounded-full flex-shrink-0 ${
                   hasLogo
-                    ? 'bg-obsidian/30'
-                    : 'bg-offwhite/40'
+                    ? 'bg-obsidian/50'
+                    : 'bg-white/50'
                 }`} />
                 {f}
               </li>
@@ -179,7 +179,7 @@ export default function Services() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-8 bg-offwhite/30" />
-              <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-offwhite/40">Lo que hacemos</span>
+              <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-white/65">Lo que hacemos</span>
             </div>
             <h2 className="font-playfair text-4xl md:text-6xl font-bold text-offwhite">
               Nuestros<br />
@@ -191,7 +191,7 @@ export default function Services() {
             initial={{ opacity: 0, x: 30 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="max-w-xs font-montserrat text-sm text-offwhite/40 leading-relaxed lg:text-right"
+            className="max-w-xs font-montserrat text-sm text-white/65 leading-relaxed lg:text-right"
           >
             Desde la concepción hasta la entrega final, cada proyecto refleja nuestra pasión por la excelencia.
           </motion.p>

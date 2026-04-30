@@ -69,7 +69,7 @@ export default function Hero() {
             className="flex items-center gap-3 mb-8"
           >
             <div className="h-px w-12 bg-offwhite/40" />
-            <span className="font-montserrat text-xs font-medium tracking-[0.4em] uppercase text-offwhite/50">República Dominicana</span>
+            <span className="font-montserrat text-xs font-medium tracking-[0.4em] uppercase text-white/70">República Dominicana</span>
           </motion.div>
 
           <motion.h1
@@ -90,7 +90,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="font-montserrat text-offwhite/50 text-sm md:text-base tracking-[0.3em] uppercase mb-12"
+            className="font-montserrat text-white/70 text-sm md:text-base tracking-[0.3em] uppercase mb-12"
           >
             50+ profesionales &nbsp;|&nbsp; 150+ proyectos completados &nbsp;|&nbsp; República Dominicana
           </motion.p>
@@ -134,7 +134,7 @@ export default function Hero() {
           const el = document.querySelector('#stats');
           if (el) el.scrollIntoView({ behavior: 'smooth' });
         }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-offwhite/30 hover:text-offwhite/60 transition-colors cursor-none group"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/60 hover:text-white transition-colors cursor-none group"
       >
         <span className="font-montserrat text-xs tracking-[0.3em] uppercase">Descubrir</span>
         <motion.div

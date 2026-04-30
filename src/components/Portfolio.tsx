@@ -97,14 +97,14 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
 
       <div className="absolute inset-0 flex flex-col justify-end p-6 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
         <div className="flex items-center gap-2 mb-2">
-          <span className="font-montserrat text-xs text-offwhite/60 bg-white/10 px-2 py-0.5 rounded-sm backdrop-blur-sm">
+          <span className="font-montserrat text-xs text-white/85 bg-white/15 px-2 py-0.5 rounded-sm backdrop-blur-sm">
             {project.year}
           </span>
         </div>
         <h3 className="font-playfair text-xl font-bold text-offwhite mb-1">
           {project.title}
         </h3>
-        <div className="flex items-center gap-1.5 text-offwhite/50">
+        <div className="flex items-center gap-1.5 text-white/70">
           <MapPin size={12} />
           <span className="font-montserrat text-xs">{project.location}</span>
         </div>
@@ -143,7 +143,7 @@ export default function Portfolio() {
           >
             <div className="flex items-center gap-3 mb-4">
               <div className="h-px w-8 bg-offwhite/30" />
-              <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-offwhite/40">Proyectos destacados</span>
+              <span className="font-montserrat text-xs tracking-[0.4em] uppercase text-white/65">Proyectos destacados</span>
             </div>
             <h2 className="font-playfair text-4xl md:text-6xl font-bold text-offwhite">
               Nuestro<br />
@@ -163,8 +163,8 @@ export default function Portfolio() {
                 onClick={() => setActive(f.value)}
                 className={`px-5 py-2 font-montserrat text-xs tracking-[0.2em] uppercase transition-all duration-300 cursor-none border ${
                   active === f.value
-                    ? 'bg-offwhite text-obsidian border-offwhite'
-                    : 'text-offwhite/50 border-offwhite/10 hover:border-offwhite/30 hover:text-offwhite/80'
+                    ? 'bg-white text-black border-white'
+                    : 'text-white/75 border-white/30 hover:border-white/60 hover:text-white'
                 }`}
               >
                 {f.label}
