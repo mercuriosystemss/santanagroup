@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { MapPin, Phone, Mail, Instagram, Linkedin, Facebook } from 'lucide-react';
+import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
 
 const quickLinks = ['Servicios', 'Portfolio', 'Nosotros', 'Contacto', 'Carreras'];
 const hrefs: Record<string, string> = {
@@ -98,19 +98,15 @@ export default function Footer() {
                 Síguenos
               </h4>
               <div className="flex gap-3">
-                {[
-                  { Icon: Instagram, label: 'Instagram' },
-                  { Icon: Linkedin, label: 'LinkedIn' },
-                  { Icon: Facebook, label: 'Facebook' },
-                ].map(({ Icon, label }) => (
-                  <button
-                    key={label}
-                    aria-label={label}
-                    className="w-9 h-9 glass flex items-center justify-center text-white/60 hover:text-offwhite hover:border-white/20 transition-all duration-300 rounded-sm cursor-none"
-                  >
-                    <Icon size={15} />
-                  </button>
-                ))}
+                <a
+                  href="https://www.instagram.com/santanagroup0/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-9 h-9 glass flex items-center justify-center text-white/60 hover:text-offwhite hover:border-white/20 transition-all duration-300 rounded-sm cursor-none"
+                >
+                  <Instagram size={15} />
+                </a>
               </div>
             </div>
           </div>
