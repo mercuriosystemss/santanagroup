@@ -101,26 +101,26 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="flex flex-col sm:flex-row gap-4 items-start"
           >
-            <MagneticButton
+            <button
               onClick={() => {
                 const el = document.querySelector('#contacto');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="text-sm px-8 py-4 border-2 border-gold/70 bg-gold/20 hover:bg-gold hover:text-obsidian hover:border-gold transition-all font-montserrat tracking-widest"
+              className="px-8 py-4 border-2 border-white bg-white/10 text-white font-montserrat text-xs font-bold tracking-widest uppercase hover:bg-white/20 hover:border-white transition-all duration-300 cursor-none"
             >
-              <span className="flex items-center gap-2 font-semibold">
+              <span className="flex items-center gap-2">
                 INICIA TU PROYECTO <ArrowRight size={14} />
               </span>
-            </MagneticButton>
+            </button>
 
             <button
               onClick={() => {
                 const el = document.querySelector('#portfolio');
                 if (el) el.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="px-8 py-4 border-2 border-offwhite/80 text-offwhite font-montserrat text-xs tracking-[0.2em] uppercase hover:bg-offwhite/10 hover:border-white transition-all duration-300 cursor-none"
+              className="px-8 py-4 border-2 border-white/60 text-white/80 font-montserrat text-xs font-semibold tracking-widest uppercase hover:bg-white/15 hover:border-white/80 hover:text-white transition-all duration-300 cursor-none"
             >
-              Ver Portfolio
+              VER PORTFOLIO
             </button>
           </motion.div>
         </div>

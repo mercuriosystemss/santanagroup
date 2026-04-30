@@ -30,13 +30,13 @@ function LocationPin({ loc, index, isActive, onClick }: {
       onClick={onClick}
     >
       <div className="relative group">
-        <div className={`relative flex items-center justify-center w-14 h-14 rounded-full transition-all duration-300 shadow-xl ${isActive ? 'bg-gold scale-125 shadow-gold/50' : 'bg-dark-card border-2 border-gold/60 hover:border-gold hover:scale-110'}`}>
-          <MapPin size={24} className={isActive ? 'text-obsidian' : 'text-gold'} />
+        <div className={`relative flex items-center justify-center w-14 h-14 rounded-full transition-all duration-300 shadow-xl ${isActive ? 'bg-white scale-125 shadow-white/30' : 'bg-black/60 border-2 border-white hover:border-white hover:scale-110'}`}>
+          <MapPin size={24} className={isActive ? 'text-black' : 'text-white'} />
           {!isActive && (
-            <span className="absolute inset-0 rounded-full border-2 border-gold/40 animate-ping" />
+            <span className="absolute inset-0 rounded-full border-2 border-white/40 animate-ping" />
           )}
         </div>
-        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-1.5 h-1.5 rounded-full bg-gold" />
+        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-1 w-1.5 h-1.5 rounded-full bg-white" />
 
         <motion.div
           initial={{ opacity: 0, y: -8, scale: 0.9 }}
@@ -130,8 +130,8 @@ export default function Locations() {
 <svg viewBox="0 0 200 140" className="w-full">
   <defs>
     <linearGradient id="islandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stopColor="rgba(212,175,55,0.4)"/>
-      <stop offset="100%" stopColor="rgba(212,175,55,0.25)"/>
+      <stop offset="0%" stopColor="rgba(255,255,255,0.15)"/>
+      <stop offset="100%" stopColor="rgba(255,255,255,0.05)"/>
     </linearGradient>
     <filter id="glow">
       <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -141,11 +141,11 @@ export default function Locations() {
       </feMerge>
     </filter>
   </defs>
-  <path d="M60,20 L80,15 L100,18 L130,12 L160,20 L175,35 L180,55 L170,70 L165,85 L150,95 L130,100 L110,110 L90,115 L70,110 L55,100 L45,85 L40,65 L45,45 Z" fill="url(#islandGrad)" stroke="rgba(212,175,55,0.9)" strokeWidth="3.5" filter="url(#glow)"/>
-  <path d="M60,20 L80,15 L100,18 L100,50 L80,55 L60,50 Z" fill="rgba(255,255,255,0.12)" stroke="rgba(212,175,55,0.7)" strokeWidth="2"/>
-  <path d="M100,18 L130,12 L150,30 L130,50 L100,50 Z" fill="rgba(255,255,255,0.1)" stroke="rgba(212,175,55,0.7)" strokeWidth="2"/>
-  <path d="M100,50 L130,50 L140,70 L120,85 L100,80 L90,75 L80,55 L100,50 Z" fill="rgba(255,255,255,0.15)" stroke="rgba(212,175,55,0.75)" strokeWidth="2"/>
-  <g opacity="0.35" stroke="rgba(212,175,55,0.5)" strokeWidth="0.8">
+  <path d="M60,20 L80,15 L100,18 L130,12 L160,20 L175,35 L180,55 L170,70 L165,85 L150,95 L130,100 L110,110 L90,115 L70,110 L55,100 L45,85 L40,65 L45,45 Z" fill="url(#islandGrad)" stroke="rgba(255,255,255,0.9)" strokeWidth="3" filter="url(#glow)"/>
+  <path d="M60,20 L80,15 L100,18 L100,50 L80,55 L60,50 Z" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
+  <path d="M100,18 L130,12 L150,30 L130,50 L100,50 Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5"/>
+  <path d="M100,50 L130,50 L140,70 L120,85 L100,80 L90,75 L80,55 L100,50 Z" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.45)" strokeWidth="1.5"/>
+  <g opacity="0.35" stroke="rgba(255,255,255,0.4)" strokeWidth="0.8">
     <line x1="0" y1="35" x2="200" y2="35"/><line x1="0" y1="70" x2="200" y2="70"/><line x1="0" y1="105" x2="200" y2="105"/>
     <line x1="50" y1="0" x2="50" y2="140"/><line x1="100" y1="0" x2="100" y2="140"/><line x1="150" y1="0" x2="150" y2="140"/>
   </g>
