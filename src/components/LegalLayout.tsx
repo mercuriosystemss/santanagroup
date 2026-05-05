@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowUp, ChevronRight } from 'lucide-react';
 import Footer from './Footer';
+import CustomCursor from './CustomCursor';
 
 const LEGAL_LABELS: Record<string, string> = {
   '/politica-privacidad': 'Política de Privacidad',
@@ -38,6 +39,8 @@ export default function LegalLayout({ title, subtitle, lastUpdated, children, se
 
   return (
     <div className="bg-obsidian text-offwhite min-h-screen flex flex-col">
+      <div className="grain-overlay" aria-hidden="true" />
+      <CustomCursor />
       <header className="sticky top-0 z-50 bg-obsidian/95 backdrop-blur-md border-b border-white/8">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
           <Link to="/" className="flex items-center">
