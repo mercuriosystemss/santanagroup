@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import LegalLayout from '../components/LegalLayout';
 
 const sections = [
@@ -16,7 +17,16 @@ const sections = [
 
 export default function PrivacyPolicy() {
   return (
-    <LegalLayout
+    <>
+      <Helmet>
+        <title>Política de Privacidad - RDSS Santana Group</title>
+        <meta name="description" content="Política de privacidad y protección de datos de RDSS Santana Group. Información sobre el tratamiento de datos personales." />
+        <link rel="canonical" href="https://rdsssantanagroup.com/politica-privacidad" />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="Política de Privacidad - RDSS Santana Group" />
+        <meta property="og:url" content="https://rdsssantanagroup.com/politica-privacidad" />
+      </Helmet>
+      <LegalLayout
       title="Política de Privacidad"
       subtitle="Información sobre el tratamiento de datos personales de RDSS Santana Group"
       lastUpdated="Abril 2026"
@@ -139,6 +149,7 @@ export default function PrivacyPolicy() {
         </p>
       </Section>
     </LegalLayout>
+    </>
   );
 }
 

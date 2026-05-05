@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import LegalLayout from '../components/LegalLayout';
 
 const sections = [
@@ -13,7 +14,16 @@ const sections = [
 
 export default function CookiePolicy() {
   return (
-    <LegalLayout
+    <>
+      <Helmet>
+        <title>Política de Cookies - RDSS Santana Group</title>
+        <meta name="description" content="Información sobre el uso de cookies en el sitio web de RDSS Santana Group." />
+        <link rel="canonical" href="https://rdsssantanagroup.com/politica-cookies" />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="Política de Cookies - RDSS Santana Group" />
+        <meta property="og:url" content="https://rdsssantanagroup.com/politica-cookies" />
+      </Helmet>
+      <LegalLayout
       title="Política de Cookies"
       subtitle="Información sobre el uso de cookies y tecnologías de seguimiento en el sitio web de RDSS Santana Group"
       lastUpdated="Abril 2026"
@@ -139,6 +149,7 @@ export default function CookiePolicy() {
         </p>
       </Section>
     </LegalLayout>
+    </>
   );
 }
 

@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import LegalLayout from '../components/LegalLayout';
 
 const sections = [
@@ -16,7 +17,16 @@ const sections = [
 
 export default function TerminiCondizioni() {
   return (
-    <LegalLayout
+    <>
+      <Helmet>
+        <title>Términos y Condiciones - RDSS Santana Group</title>
+        <meta name="description" content="Términos y condiciones de uso del sitio web de RDSS Santana Group." />
+        <link rel="canonical" href="https://rdsssantanagroup.com/terminos-condiciones" />
+        <meta name="robots" content="noindex, follow" />
+        <meta property="og:title" content="Términos y Condiciones - RDSS Santana Group" />
+        <meta property="og:url" content="https://rdsssantanagroup.com/terminos-condiciones" />
+      </Helmet>
+      <LegalLayout
       title="Términos y Condiciones"
       subtitle="Condiciones generales de uso del sitio web de RDSS Santana Group"
       lastUpdated="Abril 2026"
@@ -144,6 +154,7 @@ export default function TerminiCondizioni() {
         </p>
       </Section>
     </LegalLayout>
+    </>
   );
 }
 
