@@ -34,20 +34,20 @@ function HomePage() {
         <meta name="twitter:image" content="https://rdsssantanagroup.com/og-image.jpg" />
       </Helmet>
       <div className="bg-obsidian text-offwhite overflow-x-hidden">
-      <div className="grain-overlay" aria-hidden="true" />
-      <CustomCursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <Stats />
-        <Services />
-        <Portfolio />
-        <Locations />
-        <ContactForm />
-      </main>
-      <Footer />
-      <CookieBar />
-    </div>
+        <div className="grain-overlay" aria-hidden="true" />
+        <CustomCursor />
+        <Navbar />
+        <main>
+          <Hero />
+          <Stats />
+          <Services />
+          <Portfolio />
+          <Locations />
+          <ContactForm />
+        </main>
+        <Footer />
+        <CookieBar />
+      </div>
     </>
   );
 }
