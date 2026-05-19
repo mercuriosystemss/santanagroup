@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Send, CheckCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle } from 'lucide-react';
 
 const inputClass = `
   w-full bg-dark-card border border-white/20 text-white font-montserrat text-sm px-4 py-3.5
@@ -11,17 +11,62 @@ const inputClass = `
 
 const labelClass = 'block font-montserrat text-xs font-medium text-white/75 uppercase tracking-widest mb-2';
 
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+interface FormData {
+  nombre: string;
+  email: string;
+  telefono: string;
+  tipoProyecto: string;
+  presupuesto: string;
+  timeline: string;
+  mensaje: string;
+}
+
+const emptyForm: FormData = {
+  nombre: '',
+  email: '',
+  telefono: '',
+  tipoProyecto: '',
+  presupuesto: '',
+  timeline: '',
+  mensaje: '',
+};
+
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [form, setForm] = useState<FormData>(emptyForm);
   const { ref, inView } = useInView({ threshold: 0.1, triggerOnce: true });
+
+  const set = (field: keyof FormData) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
+      setForm(prev => ({ ...prev, [field]: e.target.value }));
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1500));
-    setLoading(false);
-    setSent(true);
+    setError(null);
+
+    try {
+      const res = await fetch(`${SUPABASE_URL}/functions/v1/send-contact-email`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) throw new Error();
+      setSent(true);
+    } catch {
+      setError('Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo o contáctanos directamente.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -78,7 +123,7 @@ export default function ContactForm() {
                 Gracias por contactarnos. Uno de nuestros expertos se pondrá en contacto contigo en menos de 24 horas.
               </p>
               <button
-                onClick={() => setSent(false)}
+                onClick={() => { setSent(false); setForm(emptyForm); }}
                 className="mt-4 font-montserrat text-xs text-offwhite/50 underline underline-offset-4 hover:text-offwhite transition-colors cursor-none"
               >
                 Enviar otro mensaje
@@ -89,19 +134,44 @@ export default function ContactForm() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className={labelClass}>Nombre completo</label>
-                  <input type="text" required placeholder="Ej. Carlos Martínez" className={inputClass} />
+                  <input
+                    type="text"
+                    required
+                    placeholder="Ej. Carlos Martínez"
+                    className={inputClass}
+                    value={form.nombre}
+                    onChange={set('nombre')}
+                  />
                 </div>
                 <div>
                   <label className={labelClass}>Correo electrónico</label>
-                  <input type="email" required placeholder="carlos@empresa.com" className={inputClass} />
+                  <input
+                    type="email"
+                    required
+                    placeholder="carlos@empresa.com"
+                    className={inputClass}
+                    value={form.email}
+                    onChange={set('email')}
+                  />
                 </div>
                 <div>
                   <label className={labelClass}>Teléfono</label>
-                  <input type="tel" placeholder="+1 (809) 000-0000" className={inputClass} />
+                  <input
+                    type="tel"
+                    placeholder="+1 (809) 000-0000"
+                    className={inputClass}
+                    value={form.telefono}
+                    onChange={set('telefono')}
+                  />
                 </div>
                 <div>
                   <label className={labelClass}>Tipo de proyecto</label>
-                  <select required className={inputClass} defaultValue="">
+                  <select
+                    required
+                    className={inputClass}
+                    value={form.tipoProyecto}
+                    onChange={set('tipoProyecto')}
+                  >
                     <option value="" disabled>Seleccionar...</option>
                     <option>Villa residencial</option>
                     <option>Resort / Hotel</option>
@@ -113,7 +183,11 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <label className={labelClass}>Presupuesto estimado</label>
-                  <select className={inputClass} defaultValue="">
+                  <select
+                    className={inputClass}
+                    value={form.presupuesto}
+                    onChange={set('presupuesto')}
+                  >
                     <option value="" disabled>Seleccionar...</option>
                     <option>USD 50,000 – 100,000</option>
                     <option>USD 100,000 – 250,000</option>
@@ -124,7 +198,11 @@ export default function ContactForm() {
                 </div>
                 <div>
                   <label className={labelClass}>Timeline</label>
-                  <select className={inputClass} defaultValue="">
+                  <select
+                    className={inputClass}
+                    value={form.timeline}
+                    onChange={set('timeline')}
+                  >
                     <option value="" disabled>Seleccionar...</option>
                     <option>Inmediato</option>
                     <option>1 – 3 meses</option>
@@ -141,8 +219,21 @@ export default function ContactForm() {
                   rows={5}
                   placeholder="Cuéntanos sobre tu proyecto, ubicación, requerimientos especiales..."
                   className={`${inputClass} resize-none`}
+                  value={form.mensaje}
+                  onChange={set('mensaje')}
                 />
               </div>
+
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-start gap-3 px-4 py-3 border border-red-500/30 bg-red-500/10 rounded-sm"
+                >
+                  <AlertCircle size={16} className="text-red-400 flex-shrink-0 mt-0.5" />
+                  <p className="font-montserrat text-xs text-red-300 leading-relaxed">{error}</p>
+                </motion.div>
+              )}
 
               <div className="flex justify-center pt-2">
                 <button

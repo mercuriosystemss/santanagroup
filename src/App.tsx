@@ -10,6 +10,7 @@ import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import CookieBar from './components/CookieBar';
 import CustomCursor from './components/CustomCursor';
+import WhatsAppButton from './components/WhatsAppButton';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import CookiePolicy from './pages/CookiePolicy';
 import TerminiCondizioni from './pages/TerminiCondizioni';
@@ -47,6 +48,7 @@ function HomePage() {
         </main>
         <Footer />
         <CookieBar />
+        <WhatsAppButton />
       </div>
     </>
   );
